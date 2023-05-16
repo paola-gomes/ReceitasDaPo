@@ -22,3 +22,11 @@ constraint pkComposta primary key (idFeedback, fkCadastro)
 );
 
 select * from cadastro;
+
+create table FaleConosco (
+idFale int primary key auto_increment,
+descricao varchar (300),
+email varchar(45)
+);
+
+select * from FaleConosco;

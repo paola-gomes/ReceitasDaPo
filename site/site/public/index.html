@@ -9,6 +9,7 @@
   <link rel="icon" href="../public/img/logo/logoP-removebg.png">
   <link rel="stylesheet" href="./css/estilo.css">
   <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+  <script src="js/funcoes.js"></script>
 </head>
 
 <body>
@@ -32,7 +33,7 @@
           <ul>
             <li><a class="a_menu" href="receitas.html">Receitas</a></li>
             <li><a class="a_menu" href="top5.html">Top 5</a></li>
-            <!-- <li><a class="a_menu" href="#">i dont know</a></li> -->
+            <li><a class="a_menu" href="comentario.html">Deixe seu comentário!</a></li>
           </ul>
       </ul>
     </div>
@@ -65,13 +66,13 @@
 
         </div>
         <div class="bloco">
-          <img src="img/food/bolo_choc_reche.jpeg" alt="esfiha">
+          <div class="blocoImg1"></div>
         </div>
       </div>
 
       <div class="blocos">
         <div class="bloco">
-          <img src="img/food/esfiha2.jpeg" alt="esfiha">
+          <div class="blocoImg"><img src="img/food/esfiha2.jpeg" alt="esfiha"></div>
         </div>
         <div class="bloco">
           <p>
@@ -119,6 +120,35 @@
     </div>
   </div>
 
+  <!-- Fale conosco -->
+  <!-- <div class="login">
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div> -->
+  <div class="faleConosco">
+    <div class="container">
+      <div class="title">
+        <p>
+          Alguma dúvida não foi respondida? Mande para nós
+        </p>
+      </div>
+      <div>
+        <textarea id="textarea" cols="30" rows="10" placeholder="Digite aqui..."></textarea>
+      </div>
+      <div>
+        <input type="text" id="input_email" placeholder="Coloque seu e-mail aqui para receber a resposta da sua dúvida..." >
+      </div>
+        <button class="botao" onclick="enviar()">
+          Enviar
+        </button>
+        <!-- <div id="divAguardar" class="loading-div">
+          <img src="./assets/circle-loading.gif" id="loading-gif">
+      </div> -->
+    </div>
+  </div>
+
   <!-- Contato -->
   <div class="footer">
     <div class="container">
@@ -127,6 +157,72 @@
     </div>
   </div>
 
-</body>
+  
 
+</body>
 </html>
+
+<script>
+
+function enviar(){
+
+  // aguardar();
+
+  var descricaoVar = textarea.value;
+  var emailVar = input_email.value;
+
+  if (descricaoVar == "" || emailVar == "" ) {
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            // finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(5000);
+        }
+
+        fetch("/faleConosco/enviar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                descricaoServer: descricaoVar,
+                emailServer: emailVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                // mensagem_erro.innerHTML = "Dúvida enviada Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "index.html";
+                }, "2000")
+
+                // limparFormulario();
+                // finalizarAguardar();
+            } 
+            // else {
+            //     throw ("Houve um erro ao tentar realizar o cadastro!");
+            // }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+
+</script>
