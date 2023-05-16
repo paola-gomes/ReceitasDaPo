@@ -1,0 +1,340 @@
+@font-face {
+  font-family: Alice;
+  src: url('Alice-Regular.ttf');
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Alice;
+  background-color: rgb(255, 255, 255);
+}
+
+:root {
+  --tamanho-header: 80px;
+  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-footer: 65px;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.header {
+  background-color: #fff;
+  height: var(--tamanho-header);
+  font-size: larger;
+}
+
+.header .container {
+  /* justify-content: space-evenly; */
+  margin-left: 5%;
+  align-items: center;
+  height: 100%;
+}
+
+.header .a_menu {
+  /* margin-left: 80%; */
+  text-decoration: none;
+  color: #000000;
+}
+
+.header a .logoInicio {
+  width: 60%;
+}
+
+.header .nomeInicio {
+  width: 160%;
+}
+
+.agora {
+  font-weight: 800;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40%;
+  list-style: none;
+  color: #ffffff;
+}
+
+/* menuzin */
+
+.menu li ul {
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  display: none;
+}
+
+.menu li:hover ul,
+.menu li.over ul {
+  display: block;
+}
+
+.menu li ul li{
+  display:block;
+  width: 210px;
+  height: 50px;
+  }
+
+/* fim menu */
+
+.header h1 {
+  margin: 0;
+}
+
+/* banner/carrossel de imagens */
+
+.banner {
+  height: var(--tamanho-banner);
+  background-image: url('../img/Rectangle.png');
+  background-size: cover;
+}
+
+.banner .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.banner .container p {
+  font-size: 36px;
+  color: rgb(0, 0, 0);
+  width: 280px;
+}
+
+.banner .container span {
+  font-weight: 800;
+}
+
+/* Saiba Mais */
+
+.saibaMais {
+  height: var(--tamanho-banner);
+  display: flex;
+  margin-top: 0;
+
+}
+
+.saibaMais .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.saibaMais .container .title {
+  display: flex;
+  height: 20%;
+  width: 100%;
+  font-size: 200%;
+  justify-content: center;
+}
+
+.saibaMais .container .blocos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bloco {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Nossos Valores */
+
+.social {
+  background-color: #e5e5e5;
+  display: flex;
+}
+
+.social .container {
+  justify-content: center;
+}
+
+.box img {
+  width: 170px;
+}
+
+.social .container .boxes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.box {
+  width: 280px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box p {
+  text-align: center;
+}
+
+.login {
+  height: var(--tamanho-login);
+  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-size: cover;
+}
+
+.login .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+ .titulo {
+  margin-left: 5%;
+}
+
+.card {
+  width: 50%;
+  background-color: #3b9d1760;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  row-gap: 20px;
+}
+
+.card-cadastro {
+  height: 100%;
+  margin-top: 5%;
+  align-self: center;
+}
+
+.card-login {
+  height: 60%;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.formulario {
+  display: flex;
+  height: 90%;
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.formulario span {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.formulario input {
+  border: 2px solid #32b9cd;
+  height: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.botao {
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #000000;
+  background-color: #d8319881;
+  width: 120px;
+  height: 30px;
+  align-self: center;
+}
+
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none
+}
+
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #e6005a 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.footer {
+  height: var(--tamanho-footer);
+  width: 100%;
+  background-color: #a4b0b2;
+  color: #fff;
+}
+
+.footer h4 {
+  margin: 0;
+}
+
+.footer .container {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer .container .version {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.simulador {
+  color: white;
+}
+
+.simulador .container {
+  flex-direction: column;
+  overflow: scroll; 
+  height: var(--tamanho-simulador);
+}
