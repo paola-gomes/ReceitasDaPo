@@ -1,6 +1,9 @@
 create database ReceitasdaPo;
 use ReceitasdaPo;
 
+desc Cadastro;
+select * from Cadastro;
+
 create table Cadastro (
 idCadastro int primary key auto_increment,
 nome varchar (35),
@@ -9,6 +12,8 @@ email varchar (45),
 idade int,
 senha char (8)
 );
+
+desc Feedback;
 
 create table Feedback (
 idFeedback int auto_increment,
