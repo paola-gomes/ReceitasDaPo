@@ -150,7 +150,7 @@ body {
 }
 
 .bloco {
-  width: 550px;
+  width: 500px;
   height: 650px;
   /* margin-top: 5%; */
   display: flex;
@@ -177,6 +177,7 @@ body {
 .bloco img {
   width: 430px;
   height: 550px;
+  margin-top: 5%;
   border-radius: 15px;
   -webkit-transition: -webkit-transform .5s ease;
   transition: transform .5s ease;
@@ -192,21 +193,26 @@ body {
 /* Nossos Valores */
 
 .social {
-  background-color: #e5e5e5;
   display: flex;
-}
+  }
 
 .social .container {
+  background-color: #3b9d1734;
   justify-content: center;
+  height: 560px;
+  width: 90%;
+  border-radius: 15px;
 }
 
 .box img {
   width: 170px;
+  height: 170px;
+  border-radius: 15px;
 }
 
 .social .container .boxes {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -234,7 +240,7 @@ body {
  }
  
  .faleConosco .container{
-  width: 100%;
+  width: 55%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -264,6 +270,7 @@ body {
 }
 
 .faleConosco input {
+  margin-top: 5px;
   font-family: Alice;
   src: url('Alice-Regular.ttf');
   border: 2px solid #3b9d1760;
@@ -276,15 +283,18 @@ body {
 }
 
 .faleConosco .botao {
+  margin-top: 5px;
   cursor: pointer;
   border: 0;
   border-radius: 5px;
   font-size: 20px;
-  color: #000000;
-  background-color: #d8319881;
+  font-family: Alice;
+  font-weight: lighter;
+  color: #ffffff;
+  background-color: #d83198e1;
   width: 120px;
   height: 30px;
-  align-self: center;
+  align-self: flex-end;
 }
 
  /* Login e cadastrro */
@@ -407,11 +417,16 @@ body {
   font-size: 20px;
 }
 
+/* Contato */
+
 .footer {
-  height: var(--tamanho-footer);
+  height: 300px;
   width: 100%;
-  background-color: #a4b0b2;
+  background-color: #cbd0d1;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .footer h4 {
@@ -419,18 +434,40 @@ body {
 }
 
 .footer .container {
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
+
+.footer .container img {
+  align-self: flex-start;
+  height: 300px;
+  width: 300px;
+}
+
+.logoContato {
+  justify-content: left;
+}
+
+.logoInsta {
+  width: 20px;
+  height: 20px;
+  background-image: url('../img/insta.png') cover;
+}
+
+/* .logoInsta img {
+  width: 10px;
+  height: 10px;
+} */
 
 .footer .container .version {
   font-size: 12px;
   font-weight: 800;
 }
 
-.simulador {
+/* .simulador {
   color: white;
 }
 
@@ -438,4 +475,4 @@ body {
   flex-direction: column;
   overflow: scroll; 
   height: var(--tamanho-simulador);
-}
+} */
