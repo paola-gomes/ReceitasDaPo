@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleGraf.css">
     <title>Document</title>
 </head>
 <body>
 
-    <div>
+    <div class="anlytics">
         <canvas id="myChart"></canvas>
       </div>
       
@@ -24,21 +25,25 @@
           type: 'pie',
           data: {
             labels: [
-                'Red',
-                'Blue',
-                'Yellow',
-                'Green',
-                'Purple',
-                'Orange'],
+                'Cookies',
+                'Torta Holandesa',
+                'Brownie',
+                'Torta de limão',
+                'Casadinho',
+                'Bolo de chocolate',
+                'Pão caseiro'                
+              ],
             datasets: [{
               label: '# of Votes',
               data: [
-                12,
-                19,
+                6,
                 3,
-                5,
+                14,
                 2,
-                3],
+                2,
+                1,
+                1  
+              ],
               borderWidth: 1
             }]
           },

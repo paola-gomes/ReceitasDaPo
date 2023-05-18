@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./css/estilo.css">
   <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
   <script src="js/funcoes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -153,8 +154,8 @@
       <div class="bloquinhos">
         Torta Holandesa
       </div>
-      <div>
-        <canvas id="Chart"></canvas>
+      <div class="anlytics">
+        <canvas id="myChart"></canvas>
       </div>
     </div>
 
@@ -284,30 +285,34 @@
   //     cardErro.style.display = "none"
   // }
 
-    const ctx = document.getElementById('Chart')
-
-    new Chart(ctx, {
-      type: 'pie',
-      data: {
-        labels: [
-          'Red',
-          'Blue',
-          'Yellow'
-        ],
-        datasets: [
-          {
-            label: 'My First Dataset',
-            data: [300, 50, 100],
-            backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)'
+  const ctx = document.getElementById('myChart');
+      
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: [
+              'Cookies',
+              'Torta Holandesa',
+              'Brownie',
+              'Torta de limão',
+              'Casadinho',
+              'Bolo de chocolate',
+              'Pão caseiro'                
             ],
-            hoverOffset: 4
-          }
-        ]
-      }
-    }
-    );
+          datasets: [{
+            label: '# of Votes',
+            data: [
+              6,
+              3,
+              14,
+              2,
+              2,
+              1,
+              1  
+            ],
+            borderWidth: 1
+          }]
+        },
+      });
 
 </script>
