@@ -29,7 +29,6 @@ function enviar(req, res) {
         faleConoscoModel.enviar(descricao, email)
             .then(
                 function (resposta) {
-                    res.json(resultado);
                     res.status(200).send("Dúvida enviada com sucesso");
                 }
             ).catch(
