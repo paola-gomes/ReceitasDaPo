@@ -129,7 +129,34 @@
   <!-- Gráficos -->
 
   <div class="grafico">
-    
+    <div class="title">
+      <p>
+        Qual das minhas receitas é a sua favorita?
+      </p>
+    </div>
+    <div class="top3">
+      <div class="textoBloquinho">
+        1°lugar
+      </div>
+      <div class="bloquinhos">
+        Brownie
+      </div>
+      <div class="textoBloquinho">
+        2°lugar
+      </div>
+      <div class="bloquinhos">
+        Cookies
+      </div>
+      <div class="textoBloquinho">
+        3°lugar
+      </div>
+      <div class="bloquinhos">
+        Torta Holandesa
+      </div>
+      <div>
+        <canvas id="Chart"></canvas>
+      </div>
+    </div>
 
   </div>
 
@@ -253,9 +280,34 @@
     return false;
   }
 
-    // function sumirMensagem() {
-    //     cardErro.style.display = "none"
-    // }
+  // function sumirMensagem() {
+  //     cardErro.style.display = "none"
+  // }
 
+    const ctx = document.getElementById('Chart')
+
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: [
+          'Red',
+          'Blue',
+          'Yellow'
+        ],
+        datasets: [
+          {
+            label: 'My First Dataset',
+            data: [300, 50, 100],
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(54, 162, 235)',
+              'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 4
+          }
+        ]
+      }
+    }
+    );
 
 </script>
