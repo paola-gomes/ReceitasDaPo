@@ -34,7 +34,7 @@
           <ul>
             <li><a class="a_menu" href="receitas.html">Receitas</a></li>
             <li><a class="a_menu" href="top5.html">Top 5</a></li>
-            <li><a class="a_menu" href="comentario.html">Deixe seu comentário!</a></li>
+            <li><a class="a_menu" href="comentario.html">Nos avalie!</a></li>
           </ul>
       </ul>
     </div>
@@ -42,10 +42,54 @@
 
   <!-- Banner/Carrossel de imagens -->
   <div class="banner">
-    <div class="container">
-      <p>Welcome to my website</p>
-    </div>
+
+    <section class="carousel" aria-label="Gallery">
+      <ol class="carousel__viewport">
+        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+          <div class="carousel__snapper">
+            <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
+            <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+          </div>
+        </li>
+        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+          <div class="carousel__snapper"></div>
+          <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
+          <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
+        </li>
+        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+          <div class="carousel__snapper"></div>
+          <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
+          <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
+        </li>
+        <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+          <div class="carousel__snapper"></div>
+          <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
+          <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
+        </li>
+      </ol>
+      <aside class="carousel__navigation">
+        <ol class="carousel__navigation-list">
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
+          </li>
+        </ol>
+      </aside>
+    </section>
+
   </div>
+
+  <!-- Fim carrossel  -->
+
+  <!-- Começo Saiba mais -->
 
   <div class="saibaMais">
     <div class="container">
@@ -130,34 +174,45 @@
   <!-- Gráficos -->
 
   <div class="grafico">
-    <div class="title">
-      <p>
-        Qual das minhas receitas é a sua favorita?
-      </p>
+    <div class="container">
+      <div class="title">
+        <p>
+          Qual das minhas receitas é a sua favorita?
+        </p>
+      </div>
+      <div class="top3">
+        <div class="lugar">
+          <div class="textoBloquinho">
+            1°lugar
+          </div>
+          <div class="bloquinhos">
+            Brownie
+          </div>
+        </div>
+        <div class="lugar">
+          <div class="textoBloquinho">
+            2°lugar
+          </div>
+          <div class="bloquinhos">
+            Cookies
+          </div>
+        </div>
+        <div class="lugar">
+          <div class="textoBloquinho">
+            3°lugar
+          </div>
+          <div class="bloquinhos">
+            Torta Holandesa
+          </div>
+        </div>
+      </div>
+      <div class="graficoImagem">
+        <div class="analytics">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
     </div>
-    <div class="top3">
-      <div class="textoBloquinho">
-        1°lugar
-      </div>
-      <div class="bloquinhos">
-        Brownie
-      </div>
-      <div class="textoBloquinho">
-        2°lugar
-      </div>
-      <div class="bloquinhos">
-        Cookies
-      </div>
-      <div class="textoBloquinho">
-        3°lugar
-      </div>
-      <div class="bloquinhos">
-        Torta Holandesa
-      </div>
-      <div class="anlytics">
-        <canvas id="myChart"></canvas>
-      </div>
-    </div>
+  </div>
 
   </div>
 
@@ -176,7 +231,7 @@
         </p>
       </div>
       <div>
-        <input id="textarea" cols="30" rows="10" placeholder="Digite aqui..."></input>
+        <textarea id="textarea" cols="30" rows="10" placeholder="Digite aqui..."></textarea>
       </div>
       <div>
         <input type="text" id="input_email"
@@ -254,7 +309,7 @@
         descricaoServer: descricaoVar,
         emailServer: emailVar
       })
-    }).then (function (resposta) {
+    }).then(function (resposta) {
 
       console.log("resposta: ", resposta);
 
@@ -286,33 +341,33 @@
   // }
 
   const ctx = document.getElementById('myChart');
-      
-      new Chart(ctx, {
-        type: 'pie',
-        data: {
-          labels: [
-              'Cookies',
-              'Torta Holandesa',
-              'Brownie',
-              'Torta de limão',
-              'Casadinho',
-              'Bolo de chocolate',
-              'Pão caseiro'                
-            ],
-          datasets: [{
-            label: '# of Votes',
-            data: [
-              6,
-              3,
-              14,
-              2,
-              2,
-              1,
-              1  
-            ],
-            borderWidth: 1
-          }]
-        },
-      });
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: [
+        'Cookies',
+        'Torta Holandesa',
+        'Brownie',
+        'Torta de limão',
+        'Casadinho',
+        'Bolo de chocolate',
+        'Pão caseiro'
+      ],
+      datasets: [{
+        label: '# of Votes',
+        data: [
+          6,
+          3,
+          14,
+          2,
+          2,
+          1,
+          1
+        ],
+        borderWidth: 1
+      }]
+    },
+  });
 
 </script>
