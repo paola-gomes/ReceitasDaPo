@@ -11,6 +11,7 @@ body {
 }
 
 .container {
+  display: flex;
   width: 80%;
   margin: auto;
 }
@@ -85,7 +86,7 @@ body {
 
 /* banner/carrossel de imagens */
 
-.banner {
+/* .banner {
   height: 80vh;
   background-image: url('../img/Rectangle.png');
   background-size: cover;
@@ -105,7 +106,7 @@ body {
 
 .banner .container span {
   font-weight: 800;
-}
+} */
 
 /* carrosel */
 
@@ -192,9 +193,9 @@ ol, li {
 
 .carousel {
   position: relative;
-  padding-top: 75%;
-  filter: drop-shadow(0 0 10px #0003);
-  perspective: 100px;
+  padding-top: 45%;
+  /* filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px; */
 }
 
 .carousel__viewport {
@@ -204,10 +205,10 @@ ol, li {
   bottom: 0;
   left: 0;
   display: flex;
-  overflow-x: scroll;
+  overflow: hidden;
   counter-reset: item;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  /* scroll-snap-type: x mandatory; */
 }
 
 .carousel__slide {
@@ -216,11 +217,13 @@ ol, li {
   width: 100%;
   background-color: #f99;
   counter-increment: item;
+  /* dois ultimos devem ser tirados dps que colocar as imagens oficiais */
 }
 
 .carousel__slide:nth-child(even) {
   background-color: #99f;
 }
+/* pode ser tirado dps das imagens oficiais */
 
 .carousel__slide:before {
   content: counter(item);
@@ -245,7 +248,7 @@ ol, li {
   .carousel__snapper {
     animation-name: tonext, snap;
     animation-timing-function: ease;
-    animation-duration: 4s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
   }
 
@@ -268,7 +271,7 @@ ol, li {
 .carousel__navigation {
   position: absolute;
   right: 0;
-  bottom: 0;
+  /* bottom: 0; */
   left: 0;
   text-align: center;
 }
@@ -280,8 +283,8 @@ ol, li {
 
 .carousel__navigation-button {
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   background-color: #333;
   background-clip: content-box;
   border: 0.25rem solid transparent;
@@ -290,15 +293,19 @@ ol, li {
   transition: transform 0.1s;
 }
 
+.carousel__navigation-button:active {
+  background-color: #3b9d179b;
+}
+
 .carousel::before,
 .carousel::after,
 .carousel__prev,
 .carousel__next {
   position: absolute;
   top: 0;
-  margin-top: 37.5%;
-  width: 4rem;
-  height: 4rem;
+  margin-top: 22.5%;
+  width: 2rem;
+  height: 2rem;
   transform: translateY(-50%);
   border-radius: 50%;
   font-size: 0;
@@ -307,12 +314,12 @@ ol, li {
 
 .carousel::before,
 .carousel__prev {
-  left: -1rem;
+  left: 1rem;
 }
 
 .carousel::after,
 .carousel__next {
-  right: -1rem;
+  right: 1rem;
 }
 
 .carousel::before,
@@ -320,7 +327,7 @@ ol, li {
   content: '';
   z-index: 1;
   background-color: #333;
-  background-size: 1.5rem 1.5rem;
+  background-size: 1rem 1rem;
   background-repeat: no-repeat;
   background-position: center center;
   color: #fff;
@@ -458,10 +465,10 @@ ol, li {
 
 .grafico {
   height: 100vh;
-  width: 100vw;
+  width: 90vw;
 }
 
-.grafico .container {
+.grafico .container1 {
   height: 100vh;
   margin-top: 0;
   margin-left: 10%;
