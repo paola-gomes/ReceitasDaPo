@@ -82,18 +82,55 @@
 
   .receitas {
     width: 100%;
-    display: flex;
     font-family: Alice;
   }
 
   .titulo {
     display: flex;
     position: relative;
-    top: 5%;
-    width: 100%;
+    width: 50%;
     height: 5rem;
     font-size: 6vh;
-    left: 10%;
     align-items: center;
+    left: 5%;
+    margin: 2%;
   }
-  
+
+  .comidas {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    height: 100vh;
+    margin: 3%;
+    left: 5%;
+  }
+
+  .bloquinhos {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+  }
+
+  .bloquinhos img {
+    height: 25vh;
+    width: 13vw;
+    border-radius: 10%;
+  }
+
+  .bloquinhos button {
+    font-size: 3vh;
+    width: 8vw;
+    border: none;
+    border-radius: 10%;
+    background-color: #d83198a6;
+  }
+
+  .bloco {
+    flex-direction: column;
+    width: 20vw;
+    display: flex;
+  }
+  .botao {
+    display: flex;
+    flex-direction: column;
+  }
