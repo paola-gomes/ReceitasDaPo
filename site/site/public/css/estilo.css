@@ -114,12 +114,15 @@ body {
   75% {
     left: 0;
   }
+
   95% {
     left: 100%;
   }
+
   98% {
     left: 100%;
   }
+
   99% {
     left: 0;
   }
@@ -129,12 +132,15 @@ body {
   75% {
     left: 0;
   }
+
   95% {
     left: -300%;
   }
+
   98% {
     left: -300%;
   }
+
   99% {
     left: 0;
   }
@@ -144,12 +150,15 @@ body {
   96% {
     scroll-snap-align: center;
   }
+
   97% {
     scroll-snap-align: none;
   }
+
   99% {
     scroll-snap-align: none;
   }
+
   100% {
     scroll-snap-align: center;
   }
@@ -165,7 +174,7 @@ body {
 /* * {
   box-sizing: border-box;
   scrollbar-color: transparent transparent; /* thumb and track color */
-  /* scrollbar-width: 0px;
+/* scrollbar-width: 0px;
 }
 
 *::-webkit-scrollbar {
@@ -183,9 +192,10 @@ body {
 
 * {
   -ms-overflow-style: none;
-} */ 
+} */
 
-ol, li {
+ol,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -223,6 +233,7 @@ ol, li {
 .carousel__slide:nth-child(even) {
   background-color: #99f;
 }
+
 /* pode ser tirado dps das imagens oficiais */
 
 .carousel__slide:before {
@@ -230,7 +241,7 @@ ol, li {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate3d(-50%,-40%,70px);
+  transform: translate3d(-50%, -40%, 70px);
   color: #fff;
   font-size: 2em;
 }
@@ -499,7 +510,7 @@ ol, li {
   justify-content: space-around;
 }
 
-.top3 .textoBloquinho{
+.top3 .textoBloquinho {
   top: 0vh;
   right: 40%;
   width: 100%;
@@ -518,7 +529,7 @@ ol, li {
 .analytics {
   height: 40vh;
   width: 100%;
-} 
+}
 
 canvas {
   width: 50vw;
@@ -641,7 +652,7 @@ canvas {
   left: 30%;
 }
 
-.textinho{
+.textinho {
   list-style-type: none;
   font-family: Alice;
   font-size: 3vh;
@@ -681,7 +692,7 @@ canvas {
   list-style-type: none;
 }
 
-.textinho2{
+.textinho2 {
   list-style-type: none;
   font-family: Alice;
   font-size: 3vh;

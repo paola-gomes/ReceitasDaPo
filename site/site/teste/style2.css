@@ -1,0 +1,33 @@
+  .navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40%;
+    list-style: none;
+    color: #ffffff;
+  }
+  
+  
+  .menu li ul {
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    display: none;
+  }
+  
+  .menu li ul li {
+    display: block;
+    width: 210px;
+    height: 50px;
+  }
+  
+  .content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+  
+  .show {
+    height: auto;
+  }
