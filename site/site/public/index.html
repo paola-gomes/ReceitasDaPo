@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Receitas da Pô</title>
   <link rel="icon" href="../public/img/logo/logoP-removebg.png">
-  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="stylesheet" href="./css/styleIndex.css">
   <script src="js/funcoes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -46,23 +46,19 @@
       <ol class="carousel__viewport">
         <li id="carousel__slide1" tabindex="0" class="carousel__slide">
           <div class="carousel__snapper">
-            <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
             <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
           </div>
         </li>
         <li id="carousel__slide2" tabindex="0" class="carousel__slide">
           <div class="carousel__snapper"></div>
           <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
-          <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
         </li>
         <li id="carousel__slide3" tabindex="0" class="carousel__slide">
           <div class="carousel__snapper"></div>
           <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
-          <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
         </li>
         <li id="carousel__slide4" tabindex="0" class="carousel__slide">
           <div class="carousel__snapper"></div>
-          <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
           <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
         </li>
       </ol>
@@ -73,12 +69,6 @@
           </li>
           <li class="carousel__navigation-item">
             <a href="#carousel__slide2" class="carousel__navigation-button" onclick="changeColor(this)">Go to slide 2</a>
-          </li>
-          <li class="carousel__navigation-item">
-            <a href="#carousel__slide3" class="carousel__navigation-button" onclick="changeColor(this)">Go to slide 3</a>
-          </li>
-          <li class="carousel__navigation-item">
-            <a href="#carousel__slide4" class="carousel__navigation-button" onclick="changeColor(this)">Go to slide 4</a>
           </li>
         </ol>
       </aside>
@@ -310,6 +300,34 @@ function changeColor(clickedButton) {
       setInterval(5000);
     }
 
+    if (descricaoVar.length > 100) {
+      cardErro.style.display = "block"
+      mensagem_erro.innerHTML = "(A descrição tem que ter até 100 caracteres)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000)
+    }
+
+    if (emailVar.search("@") == -1) {
+      cardErro.style.display = "block"
+      mensagem_erro.innerHTML = "(O Email deve conter @)";
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000)
+    }
+
+    if (emailVar.search(".com") == -1) {
+      cardErro.style.display = "block"
+      mensagem_erro.innerHTML = "(O Email deve conter .com)";
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000)
+    }
+
     fetch("/faleConosco/enviar", {
       method: "POST",
       headers: {
@@ -330,9 +348,11 @@ function changeColor(clickedButton) {
 
         // mensagem_erro.innerHTML = "Dúvida enviada Redirecionando para tela de Login...";
 
-        setTimeout(() => {
-          window.location = "index.html";
-        }, "2000")
+        // setTimeout(() => {
+        //   window.location = "index.html";
+        // }, "2000")
+
+        alert("Sua dúvida foi enviada com sucesso :)")
 
         // limparFormulario();
         // finalizarAguardar();
@@ -352,34 +372,34 @@ function changeColor(clickedButton) {
   //     cardErro.style.display = "none"
   // }
 
-  const ctx = document.getElementById('myChart');
+  // const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: [
-        'Cookies',
-        'Torta Holandesa',
-        'Brownie',
-        'Torta de limão',
-        'Casadinho',
-        'Bolo de chocolate',
-        'Pão caseiro'
-      ],
-      datasets: [{
-        label: '# of Votes',
-        data: [
-          6,
-          3,
-          14,
-          2,
-          2,
-          1,
-          1
-        ],
-        borderWidth: 1
-      }]
-    },
-  });
+  // new Chart(ctx, {
+  //   type: 'pie',
+  //   data: {
+  //     labels: [
+  //       'Cookies',
+  //       'Torta Holandesa',
+  //       'Brownie',
+  //       'Torta de limão',
+  //       'Casadinho',
+  //       'Bolo de chocolate',
+  //       'Pão caseiro'
+  //     ],
+  //     datasets: [{
+  //       label: '# of Votes',
+  //       data: [
+  //         6,
+  //         3,
+  //         14,
+  //         2,
+  //         2,
+  //         1,
+  //         1
+  //       ],
+  //       borderWidth: 1
+  //     }]
+  //   },
+  // });
 
 </script>

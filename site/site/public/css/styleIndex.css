@@ -225,18 +225,14 @@ li {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
-  background-color: #f99;
-  counter-increment: item;
-  /* dois ultimos devem ser tirados dps que colocar as imagens oficiais */
+  background-image: url("../img/Rectangle.png");
 }
 
 .carousel__slide:nth-child(even) {
-  background-color: #99f;
+  background-image: url("../img/2.jpeg");
 }
 
-/* pode ser tirado dps das imagens oficiais */
-
-.carousel__slide:before {
+/* .carousel__slide:before {
   content: counter(item);
   position: absolute;
   top: 50%;
@@ -244,7 +240,7 @@ li {
   transform: translate3d(-50%, -40%, 70px);
   color: #fff;
   font-size: 2em;
-}
+} */
 
 .carousel__snapper {
   position: absolute;
@@ -259,7 +255,7 @@ li {
   .carousel__snapper {
     animation-name: tonext, snap;
     animation-timing-function: ease;
-    animation-duration: 10s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
   }
 

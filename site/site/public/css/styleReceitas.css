@@ -102,7 +102,7 @@ body {
   justify-content: space-around;
   height: 100vh;
   margin: 3%;
-  left: 5%;
+  /* left: 5%; */
 }
 
 .bloquinhos {

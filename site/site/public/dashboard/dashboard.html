@@ -2,13 +2,12 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
-
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Receitas da Pô - Área do usuário</title>
+    <link rel="icon" href="../public/img/logo/logoP-removebg.png">
+    <link rel="stylesheet" href="../css/styleDash.css">
     <link rel="stylesheet" href="dashboards.css">
     <script src="../js/funcoes.js"></script>
 
@@ -61,10 +60,10 @@
         <div class="dash">
             <div class="btns-dash">
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart btn-pink" onclick="exibirAquario(1)" id="btnAquario1">Aquario 1</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(2)" id="btnAquario2">Aquario 2</button>
+                <button class="btn-chart btn-pink" onclick="exibirAquario(1)" id="btnAquario1">Avaliações</button>
+                <!-- <button class="btn-chart btn-white" onclick="exibirAquario(2)" id="btnAquario2">Aquario 2</button>
                 <button class="btn-chart btn-white" onclick="exibirAquario(3)" id="btnAquario3">Aquario 3</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(4)" id="btnAquario4">Aquario 4</button>
+                <button class="btn-chart btn-white" onclick="exibirAquario(4)" id="btnAquario4">Aquario 4</button> -->
             </div>
             <div id="graficos">
                 <div id="grafico1" class="display-block">
@@ -79,7 +78,7 @@
                     </div>
                 </div>
 
-                <div id="grafico2" class="display-none">
+                <!-- <div id="grafico2" class="display-none">
                     <h3 class="tituloGraficos">
                         <span id="tituloAquario2"></span>
                     </h3>
@@ -113,7 +112,7 @@
                     <div class="label-captura">
                         <p id="avisoCaptura4" style="color: white"></p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -132,47 +131,47 @@
 
     function obterDadosGraficos() {
         obterDadosGrafico(1)
-        obterDadosGrafico(2)
-        obterDadosGrafico(3)
-        obterDadosGrafico(4)
+        // obterDadosGrafico(2)
+        // obterDadosGrafico(3)
+        // obterDadosGrafico(4)
     }
 
     verificar_autenticacao();
 
     function alterarTitulo(idAquario) {
         var tituloAquario = document.getElementById(`tituloAquario${idAquario}`)
-        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
+        tituloAquario.innerHTML = "Últimas avaliações das Receitas <span style='color: #e6005a'> " + idAquario + "</span>"
     }
 
-    function exibirAquario(idAquario) {
-        let todosOsGraficos = document.getElementById("graficos")
+    // function exibirAquario(idAquario) {
+    //     let todosOsGraficos = document.getElementById("graficos")
 
-        for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
-            // exibindo - ou não - o gráfico
-            let elementoAtual = document.getElementById(`grafico${i}`)
-            if (elementoAtual.classList.contains("display-block")) {
-                elementoAtual.classList.remove("display-block")
-            }
-            elementoAtual.classList.add("display-none")
+    //     for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
+    //         // exibindo - ou não - o gráfico
+    //         let elementoAtual = document.getElementById(`grafico${i}`)
+    //         if (elementoAtual.classList.contains("display-block")) {
+    //             elementoAtual.classList.remove("display-block")
+    //         }
+    //         elementoAtual.classList.add("display-none")
             
-            // alterando estilo do botão
-            let btnAtual = document.getElementById(`btnAquario${i}`)
-            if (btnAtual.classList.contains("btn-pink")) {
-                btnAtual.classList.remove("btn-pink")
-            }
-            btnAtual.classList.add("btn-white")
-        }
+    //         // alterando estilo do botão
+    //         let btnAtual = document.getElementById(`btnAquario${i}`)
+    //         if (btnAtual.classList.contains("btn-pink")) {
+    //             btnAtual.classList.remove("btn-pink")
+    //         }
+    //         btnAtual.classList.add("btn-white")
+    //     }
         
-        // exibindo - ou não - o gráfico
-        let graficoExibir = document.getElementById(`grafico${idAquario}`)
-        graficoExibir.classList.remove("display-none")
-        graficoExibir.classList.add("display-block")
+    //     // exibindo - ou não - o gráfico
+    //     let graficoExibir = document.getElementById(`grafico${idAquario}`)
+    //     graficoExibir.classList.remove("display-none")
+    //     graficoExibir.classList.add("display-block")
         
-        // alterando estilo do botão
-        let btnExibir = document.getElementById(`btnAquario${idAquario}`)
-        btnExibir.classList.remove("btn-white")
-        btnExibir.classList.add("btn-pink")
-    }
+    //     // alterando estilo do botão
+    //     let btnExibir = document.getElementById(`btnAquario${idAquario}`)
+    //     btnExibir.classList.remove("btn-white")
+    //     btnExibir.classList.add("btn-pink")
+    // }
 
     // O gráfico é construído com três funções:
     // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
