@@ -20,14 +20,33 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body onload=" atualizarFeed()">
 
+    <div class="header">
+        <div class="container">
+          <a href="index.html">
+            <img class="logoInicio" src="../img/logo/logoP-removebg.png" href="index.html">
+          </a>
+          <a href="index.html">
+            <img class="nomeInicio" src="../img/logo/nomeP-removebg.png" href="index.html">
+          </a>
+          <ul class="navbar menu">
+            <li>
+            <li><a class="a_menu" href="#"><img src="../img/menu.png"></a>
+              <ul>
+                <li><a class="a_menu" href="receitas.html">Receitas</a></li>
+                <li><a class="a_menu" href="top5.html">Top 5</a></li>
+                <li><a class="a_menu" href="comentario.html">Nos avalie!</a></li>
+              </ul>
+          </ul>
+        </div>
+      </div>
+
     <div class="janela">
         <div class="header-left">
-            <h1>AquaTech</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -57,7 +76,7 @@
 
         </div>
 
-        <div class="dash">
+        <div class="dash-right">
             <div class="btns-dash">
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
                 <button class="btn-chart btn-pink" onclick="exibirAquario(1)" id="btnAquario1">Avaliações</button>
