@@ -1,0 +1,103 @@
+@font-face {
+    font-family: Alice;
+    src: url('Alice-Regular.ttf');
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Alice;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .header {
+    background-color: #fff;
+    height: 5rem;
+    font-size: larger;
+    border-bottom: 2px solid #d83198e1;
+  }
+  
+  .header .container {
+    /* justify-content: space-evenly; */
+    margin-left: 5%;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .header .a_menu {
+    /* margin-left: 80%; */
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .header a .logoInicio {
+    width: 60%;
+  }
+  
+  .header .nomeInicio {
+    width: 160%;
+  }
+  
+  /* .agora {
+    font-weight: 800;
+  } */
+  
+  .navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40%;
+    list-style: none;
+    color: #ffffff;
+  }
+  
+  /* menuzin */
+  
+  .menu li ul {
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    display: none;
+  }
+  
+  .menu li:hover ul,
+  .menu li.over ul {
+    display: block;
+  }
+  
+  .menu li ul li {
+    display: block;
+    width: 210px;
+    height: 50px;
+  }
+  
+  /* fim menu */
+  
+  .header h1 {
+    margin: 0;
+  }
+
+  /* feedback */
+
+  .feedback {
+    width: 100%;
+    font-family: Alice;
+  }
+  
+  .titulo {
+    display: flex;
+    position: relative;
+    width: 50%;
+    height: 5rem;
+    font-size: 6vh;
+    align-items: center;
+    left: 5%;
+    margin: 2%;
+  }
