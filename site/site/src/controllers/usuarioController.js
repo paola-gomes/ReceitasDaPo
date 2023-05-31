@@ -105,6 +105,43 @@ function cadastrar(req, res) {
     }
 }
 
+function enviarFeedback(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var escolha = req.body.escolhaServer;
+    var descricaoFeed = req.body.descricaoFeedServer;
+    var nota = req.body.notaServer;
+
+    // Faça as validações dos valores
+    if (escolha == undefined) {
+        res.status(400).send("A receita escolhida está undefined!");
+    } 
+    else if (descricaoFeed == undefined) {
+        res.status(400).send("A descricao está undefined!");
+    } 
+    else if (nota == undefined) {
+        res.status(400).send("Sua nota está undefined!");
+    } 
+    else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.enviarFeedback (escolha, descricaoFeed, nota)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,

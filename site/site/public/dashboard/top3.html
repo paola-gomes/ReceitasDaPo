@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receitas da Pô - Top 3</title>
+  <link rel="icon" href="../img/logo/logoP-removebg.png">
+  <link rel="stylesheet" href="../css/styleTop3.css">
+  <script src="js/funcoes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <!-- Menu -->
+  <div class="header">
+    <div class="container">
+      <a href="../index.html">
+        <img class="logoInicio" src="../img/logo/logoP-removebg.png" href="index.html">
+      </a>
+      <a href="../index.html">
+        <img class="nomeInicio" src="../img/logo/nomeP-removebg.png" href="index.html">
+      </a>
+      <ul class="navbar menu">
+        <li><a class="a_menu" href="#"><img src="../img/menu.png"></a>
+          <ul>
+            <li><a class="a_menu" href="../receitas.html">Receitas</a></li>
+            <li><a class="a_menu" href="top3.html">Top 3</a></li>
+            <li><a class="a_menu" href="comentario.html">Nos avalie!</a></li>
+          </ul>
+      </ul>
+    </div>
+  </div>
+
+  <div class="top3">
+
+    <div class="titulo">
+      Faça seu Top 3:
+    </div>
+
+    <div class="tudo">
+
+      <div class="divImg">
+        <img src="" alt="">
+      </div>
+
+      <div class="montagemTop3">
+        <p>
+          Escolha seu top 3, primeiro o 1º lugar, depois o 2º e depois o 3°
+        </p>
+        <select name="escolha" id="select_escolha">
+          <option value="" disabled selected hidden>Top 3</option>
+          <option value="Brownie">Brownie</option>
+          <option value="Cookie">Cookie</option>
+          <option value="Torta Holandesa">Torta Holandesa</option>
+          <option value="Casadinho">Casadinho</option>
+        </select>
+        <button onclick="escolher()">
+          Cadastrar
+        </button>
+      </div>
+
+      <div class="resultado">
+        <p>
+          Meu top 3
+        </p>
+        <div id="div_manip"></div>
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+  var listaTop3 = [];
+
+  function escolher() {
+
+    div_manip.innerHTML = ""
+
+    var escolha = select_escolha.value;
+    listaTop3.push(escolha)
+
+    if (listaTop3.length > 3) {
+      alert("O seu top 3 já foi cadastrado")
+    }
+    else {
+      for (var contador = 0; contador < listaTop3.length; contador++) {
+
+        div_manip.innerHTML += `${contador + 1}° ${listaTop3[contador]} <br>`
+
+      }
+    }
+  }
+
+</script>

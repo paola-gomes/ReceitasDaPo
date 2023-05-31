@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Receitas da Pô - Dê seu comentário</title>
-  <link rel="icon" href="../public/img/logo/logoP-removebg.png">
+  <title>Receitas da Pô - Nos avalie</title>
+  <link rel="icon" href="../img/logo/logoP-removebg.png">
   <link rel="stylesheet" href="../css/styleFeedback.css">
   <script src="js/funcoes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -15,23 +15,17 @@
     <!-- Menu -->
   <div class="header">
     <div class="container">
-      <a href="index.html">
+      <a href="../index.html">
         <img class="logoInicio" src="../img/logo/logoP-removebg.png" href="index.html">
       </a>
-      <a href="index.html">
+      <a href="../index.html">
         <img class="nomeInicio" src="../img/logo/nomeP-removebg.png" href="index.html">
       </a>
       <ul class="navbar menu">
-        <li>
-          <a class="a_menu" href="login.html">Login</a>
-        </li>
-        <li>
-          <a class="a_menu" href="cadastro.html">Cadastre-se</a>
-        </li>
         <li><a class="a_menu" href="#"><img src="../img/menu.png"></a>
           <ul>
-            <li><a class="a_menu" href="receitas.html">Receitas</a></li>
-            <li><a class="a_menu" href="top5.html">Top 5</a></li>
+            <li><a class="a_menu" href="../receitas.html">Receitas</a></li>
+            <li><a class="a_menu" href="top3.html">Top 3</a></li>
             <li><a class="a_menu" href="comentario.html">Nos avalie!</a></li>
           </ul>
       </ul>
@@ -42,11 +36,112 @@
 
 <div class="feedback">
     <div class="titulo">
-      Dê seu comentário
+      Dê seu feedback sobre as receitas :
     </div>
 
+    <div class="select">
+      <select name="escolha" id="select_escolha" >
+        <option value="" disabled selected hidden> Escolha a receita feita</option>
+        <option value="brownie">Brownie</option>
+        <option value="cookie">Cookie</option>
+        <option value="tortaHoland">Torta Holandesa</option>
+        <option value="casadinho">Casadinho</option>
+    </select>   
+    </div>
+
+    <div class="descricao">
+      <textarea name="descricao" id="textArea_descricao" placeholder=" Deixe seu comentário de como foi fazer esta receita..."></textarea>
+    </div>
+
+    <div class="nota">
+      <select name="nota" id="select_nota" >
+        <option value="" disabled selected hidden> Sua nota</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+        <option value=10>10</option>
+    </select>  
+    </div>
+
+    <div class="botao">
+      <button onclick="enviarFeedback()">
+        Enviar
+      </button>
+    </div>
     
 </div>
 
 </body>
 </html>
+
+<script>
+
+function enviarFeedback(){
+
+  var escolhaVar = select_escolha.value;
+  var descricaoFeedVar = textArea_descricao.value;
+  var notaVar = select_nota.value;
+  
+  if (escolhaVar == "" || descricaoFeedVar == "" || notaVar == "") {
+    alert ("Todos os campos devem ser preenchidos")
+      return false;
+    }
+    else {
+      setInterval(5000);
+    }
+
+    if (descricaoFeedVar.length > 100) {
+      cardErro.style.display = "block"
+      mensagem_erro.innerHTML = "(A descrição tem que ter até 100 caracteres)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000)
+    }
+
+    fetch("/usuarios/enviarFeedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        escolhaServer: escolhaVar,
+        descricaoFeedServer: descricaoFeedVar,
+        notaServer: notaVar
+      })
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert ("Sua avaliação foi enviada com sucesso :)")
+
+        limparFormulario();
+        finalizarAguardar();
+      } else {
+        throw ("Houve um erro ao tentar enviar sua avaliação");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+      finalizarAguardar();
+    });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none"
+  
+}
+
+</script>

@@ -74,8 +74,8 @@
   
   .menu li ul li {
     display: block;
-    width: 210px;
-    height: 50px;
+    width: 18vw;
+    height: 12vh;
   }
   
   /* fim menu */
@@ -102,7 +102,6 @@
   
   .card {
     width: 50%;
-    background-color: #3b9d1760;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -112,10 +111,12 @@
   
   .card-cadastro {
     height: 100%;
+    background-color: #3b9d1760;
   }
   
   .card-login {
     height: 45vh;
+    background-color: #d831988c ;
   }
   
   .card h2 {
@@ -161,6 +162,10 @@
     width: 8vw;
     height: 5vh;
     align-self: center;
+  }
+
+  .botao-login {
+    background-color: #3b9d17c4;
   }
   
   .loading-div {

@@ -1,103 +1,192 @@
 @font-face {
-    font-family: Alice;
-    src: url('Alice-Regular.ttf');
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Alice;
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .container {
-    display: flex;
-    width: 80%;
-    margin: auto;
-  }
-  
-  .header {
-    background-color: #fff;
-    height: 5rem;
-    font-size: larger;
-    border-bottom: 2px solid #d83198e1;
-  }
-  
-  .header .container {
-    /* justify-content: space-evenly; */
-    margin-left: 5%;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .header .a_menu {
-    /* margin-left: 80%; */
-    text-decoration: none;
-    color: #000000;
-  }
-  
-  .header a .logoInicio {
-    width: 60%;
-  }
-  
-  .header .nomeInicio {
-    width: 160%;
-  }
-  
-  /* .agora {
+  font-family: Alice;
+  src: url('Alice-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Alice;
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.header {
+  background-color: #fff;
+  height: 5rem;
+  font-size: larger;
+  border-bottom: 2px solid #d83198e1;
+}
+
+.header .container {
+  /* justify-content: space-evenly; */
+  margin-left: 5%;
+  align-items: center;
+  height: 100%;
+}
+
+.header .a_menu {
+  /* margin-left: 80%; */
+  text-decoration: none;
+  color: #000000;
+}
+
+.header a .logoInicio {
+  width: 60%;
+}
+
+.header .nomeInicio {
+  width: 160%;
+}
+
+/* .agora {
     font-weight: 800;
   } */
-  
-  .navbar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 40%;
-    list-style: none;
-    color: #ffffff;
-  }
-  
-  /* menuzin */
-  
-  .menu li ul {
-    position: absolute;
-    right: 0;
-    background-color: #fff;
-    display: none;
-  }
-  
-  .menu li:hover ul,
-  .menu li.over ul {
-    display: block;
-  }
-  
-  .menu li ul li {
-    display: block;
-    width: 210px;
-    height: 50px;
-  }
-  
-  /* fim menu */
-  
-  .header h1 {
-    margin: 0;
-  }
 
-  /* feedback */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40%;
+  list-style: none;
+  color: #ffffff;
+}
 
-  .feedback {
-    width: 100%;
-    font-family: Alice;
-  }
-  
-  .titulo {
-    display: flex;
-    position: relative;
-    width: 50%;
-    height: 5rem;
-    font-size: 6vh;
-    align-items: center;
-    left: 5%;
-    margin: 2%;
-  }
+.menu {
+  position: relative;
+  left: 18%;
+}
+
+/* menuzin */
+
+.menu li ul {
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  display: none;
+}
+
+.menu li:hover ul,
+.menu li.over ul {
+  display: block;
+}
+
+.menu li ul li {
+  display: block;
+  width: 25vw;
+  height: 12vh;
+  right: 10%;
+}
+
+/* fim menu */
+
+.header h1 {
+  margin: 0;
+}
+
+/* feedback */
+
+.feedback {
+  width: 100%;
+  font-family: Alice;
+}
+
+.titulo {
+  display: flex;
+  position: relative;
+  width: 50%;
+  height: 5rem;
+  font-size: 5vh;
+  align-items: center;
+  left: 5%;
+  margin: 2%;
+}
+
+.select {
+  position: relative;
+  left: 7%;
+  height: 7vh;
+  width: 90%;
+}
+
+.select select {
+  height: 4vh;
+  width: 16vw;
+  font-family: Alice;
+  font-size: 3vh;
+  border-radius: 1rem;
+  border: 0.15rem solid #3b9d1793;
+}
+
+.descricao {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  height: 35vh;
+  width: 100%;
+}
+
+.descricao textarea {
+  font-family: Alice;
+  src: url('Alice-Regular.ttf');
+  background-color: #d831988c;
+  border: none;
+  height: 30vh;
+  width: 50vw;
+  text-align: left;
+  border-radius: 1rem;
+  font-style: Alice;
+  font-size: 3vh;
+  resize: none;
+}
+
+.descricao textarea::placeholder {
+  color: #000000bd;
+}
+
+.nota {
+  display: flex;
+  position: relative;
+  left: 7%;
+  height: 7vh;
+  width: 90%;
+}
+
+.nota select {
+  height: 4vh;
+  width: 7vw;
+  font-family: Alice;
+  font-size: 3vh;
+  border-radius: 1rem;
+  border: 0.15rem solid #3b9d1793;
+}
+
+.botao {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+}
+
+.botao button {
+  height: 4vh;
+  width: 7vw;
+  font-family: Alice;
+  font-size: 3vh;
+  border-radius: 1rem;
+  background-color: #d831988c ;
+  border: none;
+  transition: transform .5s ease;
+}
+
+.botao button:hover {
+  transform: scale(1.1);
+}
