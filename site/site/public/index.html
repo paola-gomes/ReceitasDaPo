@@ -302,12 +302,13 @@ function changeColor(clickedButton) {
 
     if (descricaoVar.length > 100) {
       cardErro.style.display = "block"
-      mensagem_erro.innerHTML = "(A descrição tem que ter até 100 caracteres)";
+      alert("A descrição tem que ter até 100 caracteres");
+      
 
       finalizarAguardar();
       return false;
     } else {
-      setInterval(sumirMensagem, 5000)
+      setInterval(5000)
     }
 
     if (emailVar.search("@") == -1) {
@@ -316,7 +317,7 @@ function changeColor(clickedButton) {
       finalizarAguardar();
       return false;
     } else {
-      setInterval(sumirMensagem, 5000)
+      setInterval(5000)
     }
 
     if (emailVar.search(".com") == -1) {
@@ -325,7 +326,7 @@ function changeColor(clickedButton) {
       finalizarAguardar();
       return false;
     } else {
-      setInterval(sumirMensagem, 5000)
+      setInterval(5000)
     }
 
     fetch("/faleConosco/enviar", {

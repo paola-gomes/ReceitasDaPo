@@ -145,6 +145,7 @@ function enviarFeedback(req, res) {
 module.exports = {
     entrar,
     cadastrar,
+    enviarFeedback,
     listar,
     testar
 }
