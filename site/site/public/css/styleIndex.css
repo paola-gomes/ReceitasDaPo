@@ -224,8 +224,14 @@ li {
 .carousel__slide {
   position: relative;
   flex: 0 0 100%;
-  width: 100%;
-  background-image: url("../img/Rectangle.png");
+  /* width: 100%; */
+  background-image: url("../img/capa1.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+  background-color: #d831982a ;
+
 }
 
 .carousel__slide:nth-child(even) {
