@@ -82,13 +82,17 @@
 
 <script>
 
+  var idUsuario = sessionStorage.ID_USUARIO;
+
 function enviarFeedback(){
 
   var escolhaVar = select_escolha.value;
   var descricaoFeedVar = textArea_descricao.value;
   var notaVar = select_nota.value;
+  var fkCasdastroVar = idUsuario;
+
   
-  if (escolhaVar == "" || descricaoFeedVar == "" || notaVar == "") {
+  if (escolhaVar == "" || descricaoFeedVar == "" || notaVar == "" || fkCasdastroVar == "") {
     alert ("Todos os campos devem ser preenchidos")
       return false;
     }
@@ -97,10 +101,9 @@ function enviarFeedback(){
     }
 
     if (descricaoFeedVar.length > 100) {
-      cardErro.style.display = "block"
-      mensagem_erro.innerHTML = "(A descrição tem que ter até 100 caracteres)";
+      alert("A descrição tem que ter até 100 caracteres");
 
-      finalizarAguardar();
+      // finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000)
@@ -116,7 +119,8 @@ function enviarFeedback(){
         // Agora vá para o arquivo routes/usuario.js
         escolhaServer: escolhaVar,
         descricaoFeedServer: descricaoFeedVar,
-        notaServer: notaVar
+        notaServer: notaVar,
+        fkCadastroServer : fkCasdastroVar
       })
     }).then(function (resposta) {
 
@@ -133,7 +137,7 @@ function enviarFeedback(){
       }
     }).catch(function (resposta) {
       console.log(`#ERRO: ${resposta}`);
-      finalizarAguardar();
+      // finalizarAguardar();
     });
 
     return false;

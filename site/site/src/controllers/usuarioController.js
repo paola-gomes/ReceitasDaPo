@@ -110,6 +110,7 @@ function enviarFeedback(req, res) {
     var escolha = req.body.escolhaServer;
     var descricaoFeed = req.body.descricaoFeedServer;
     var nota = req.body.notaServer;
+    var fkCadastro = req.body.fkCadastroServer
 
     // Faça as validações dos valores
     if (escolha == undefined) {
@@ -121,10 +122,13 @@ function enviarFeedback(req, res) {
     else if (nota == undefined) {
         res.status(400).send("Sua nota está undefined!");
     } 
+    else if (fkCadastro == undefined){
+        res.status(400).send("Seu Id está undefined!")
+    }
     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.enviarFeedback (escolha, descricaoFeed, nota)
+        usuarioModel.enviarFeedback (escolha, descricaoFeed, nota, fkCadastro)
             .then(
                 function (resultado) {
                     res.json(resultado);

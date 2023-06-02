@@ -9,7 +9,6 @@ body {
     display: flex;
     position: relative;
     height: 40vh;
-    /* width: 100vh; */
 }
 
 canvas {

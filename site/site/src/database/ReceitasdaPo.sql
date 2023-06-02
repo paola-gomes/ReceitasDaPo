@@ -26,6 +26,8 @@ constraint fkCad foreign key (fkCadastro)
 constraint pkComposta primary key (idFeedback, fkCadastro)
 );
 
+select * from Feedback;
+
 select * from cadastro;
 
 create table FaleConosco (
