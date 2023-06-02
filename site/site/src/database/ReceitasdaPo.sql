@@ -27,9 +27,12 @@ constraint pkComposta primary key (idFeedback, fkCadastro)
 );
 
 insert into Feedback 
-values ();
+values (null, 'brownie', 'teste2', 10, 2),
+       (null, 'tortaHoland', 'teste2', 9, 2),
+       (null, 'casadinho', 'teste2', 8, 2),
+       (null, 'brownie', 'teste2', 9, 2);
 
-select receita,nota from Feedback group by nota;
+select receita,nota from Feedback 
 
 select * from cadastro;
 
