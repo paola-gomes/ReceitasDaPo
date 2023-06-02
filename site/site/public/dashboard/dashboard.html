@@ -1,355 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Receitas da Pô - Área do usuário</title>
-    <link rel="icon" href="../public/img/logo/logoP-removebg.png">
-    <link rel="stylesheet" href="../css/styleDash.css">
-    <link rel="stylesheet" href="dashboards.css">
+    <link rel="icon" href="../public/img/logo/logoP-removebg.png" />
+    <link rel="stylesheet" href="../css/styleDash.css" />
+    <link rel="stylesheet" href="dashboards.css" />
     <script src="../js/funcoes.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!--FONT AWESOME-->
     <!-- <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script> -->
-</head>
+  </head>
 
-<body onload=" atualizarFeed()">
-
+  <body onload="obterDadosGrafico()">
     <div class="header">
-        <div class="container">
-          <a href="../index.html">
-            <img class="logoInicio" src="../img/logo/logoP-removebg.png" href="index.html">
+      <div class="container">
+        <a href="../index.html">
+          <img
+            class="logoInicio"
+            src="../img/logo/logoP-removebg.png"
+            href="index.html"
+          />
+        </a>
+        <a href="../index.html">
+          <img
+            class="nomeInicio"
+            src="../img/logo/nomeP-removebg.png"
+            href="index.html"
+          />
+        </a>
+        <ul class="navbar menu">
+          <li></li>
+          <li>
+            <a class="a_menu" href="#"><img src="../img/menu.png" /></a>
+            <ul>
+              <li><a class="a_menu" href="../receitas.html">Receitas</a></li>
+              <li><a class="a_menu" href="top5.html">Top 5</a></li>
+              <li><a class="a_menu" href="feedback.html">Nos avalie!</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="janela">
+      <div class="header-left">
+        <div class="hello">
+          <h3>Oi, <span id="b_usuario">usuário</span>!</h3>
+        </div>
+
+        <div class="btn-nav">
+          <h3>Avaliações</h3>
+        </div>
+
+        <div class="btn-nav-white">
+          <a href="feedback.html">
+            <h3>Feedback</h3>
           </a>
-          <a href="../index.html">
-            <img class="nomeInicio" src="../img/logo/nomeP-removebg.png" href="index.html">
+        </div>
+
+        <div class="btn-nav-white">
+          <a href="top5.html">
+            <h3>Top 5</h3>
           </a>
-          <ul class="navbar menu">
-            <li>
-            <li><a class="a_menu" href="#"><img src="../img/menu.png"></a>
-              <ul>
-                <li><a class="a_menu" href="../receitas.html">Receitas</a></li>
-                <li><a class="a_menu" href="top5.html">Top 5</a></li>
-                <li><a class="a_menu" href="feedback.html">Nos avalie!</a></li>
-              </ul>
-          </ul>
+        </div>
+
+        <div class="btn-logout" onclick="limparSessao()">
+          <h3>sair</h3>
         </div>
       </div>
 
-    <div class="janela">
-        <div class="header-left">
-
-            <div class="hello">
-                <h3>Oi, <span id="b_usuario">usuário</span>!</h3>
+      <div class="dash-right">
+        <div class="btns-dash">
+          <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+          <button
+            class="btn-chart btn-pink"
+            onclick="exibirAquario(1)"
+            id="btnAquario1"
+          >
+            Avaliações
+          </button>
+        </div>
+        <div id="graficos">
+          <div id="grafico1" class="display-block">
+            <div class="graph">
+              <canvas id="myChart"></canvas>
             </div>
-
-            <div class="btn-nav">
-                <h3>Avaliações</h3>
+            <div class="label-captura">
+              <p id="avisoCaptura1" style="color: white"></p>
             </div>
-            
-            <div class="btn-nav-white">
-                <a href="feedback.html">
-                    <h3>Feedback</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="top5.html">
-                    <h3>Top 5</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>sair</h3>
-            </div>
+          </div>
 
         </div>
-
-        <div class="dash-right">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart btn-pink" onclick="exibirAquario(1)" id="btnAquario1">Avaliações</button>
-                <!-- <button class="btn-chart btn-white" onclick="exibirAquario(2)" id="btnAquario2">Aquario 2</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(3)" id="btnAquario3">Aquario 3</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(4)" id="btnAquario4">Aquario 4</button> -->
-            </div>
-            <div id="graficos">
-                <div id="grafico1" class="display-block">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario1">123</span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas1"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura1" style="color: white"></p>
-                    </div>
-                </div>
-
-                <!-- <div id="grafico2" class="display-none">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario2"></span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas2"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura2" style="color: white"></p>
-                    </div>
-                </div>
-
-                <div id="grafico3" class="display-none">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario3"></span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas3"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura3" style="color: white"></p>
-                    </div>
-                </div>
-
-                <div id="grafico4" class="display-none">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario4"></span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas4"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura4" style="color: white"></p>
-                    </div>
-                </div> -->
-            </div>
-        </div>
+      </div>
     </div>
-
-
-</body>
-
+  </body>
 </html>
 
 <script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    let proximaAtualizacao;
+  function obterDadosGrafico() {
+    fetch(`/grafico/ultimas/`, { cache: "no-store" })
+      .then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            plotarDadosGrafico(resposta);
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+        );
+      });
+  }
 
-    window.onload = obterDadosGraficos();
+  function plotarDadosGrafico(dados) {
+    var data = [];
+    var labels = [];
+    var cores = ["#ff0000", "#fcce05", "#9905fc", "#0838d8", "#24a518"];
 
-    // function obterDadosGraficos() {
-    //     obterDadosGrafico(1)
-    //     // obterDadosGrafico(2)
-    //     // obterDadosGrafico(3)
-    //     // obterDadosGrafico(4)
-    // }
+    for (var i = 0; i < dados.length; i++) {
+      data.push(dados[i].nota);
+      labels.push(dados[i].receita);
+    }
 
-    // verificar_autenticacao();
+    console.log("data ", data )
+    console.log("labels ", labels)
 
-    // function alterarTitulo(idCadastro) {
-    //     var tituloAquario = document.getElementById(`tituloAquario${idCadastro}`)
-    //     tituloAquario.innerHTML = "Últimas avaliações das Receitas <span style='color: #e6005a'> " + idCadastro + "</span>"
-    // }
-
-    // function exibirAquario(idCadastro) {
-    //     let todosOsGraficos = document.getElementById("graficos")
-
-    //     for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
-    //         // exibindo - ou não - o gráfico
-    //         let elementoAtual = document.getElementById(`grafico${i}`)
-    //         if (elementoAtual.classList.contains("display-block")) {
-    //             elementoAtual.classList.remove("display-block")
-    //         }
-    //         elementoAtual.classList.add("display-none")
-            
-    //         // alterando estilo do botão
-    //         let btnAtual = document.getElementById(`btnAquario${i}`)
-    //         if (btnAtual.classList.contains("btn-pink")) {
-    //             btnAtual.classList.remove("btn-pink")
-    //         }
-    //         btnAtual.classList.add("btn-white")
-    //     }
-        
-    //     // exibindo - ou não - o gráfico
-    //     let graficoExibir = document.getElementById(`grafico${idCadastro}`)
-    //     graficoExibir.classList.remove("display-none")
-    //     graficoExibir.classList.add("display-block")
-        
-    //     // alterando estilo do botão
-    //     let btnExibir = document.getElementById(`btnAquario${idCadastro}`)
-    //     btnExibir.classList.remove("btn-white")
-    //     btnExibir.classList.add("btn-pink")
-    // }
-
-    // O gráfico é construído com três funções:
-    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
-    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
-    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
-
-    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
-    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
-    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
-    // function obterDadosGrafico(idCadastro) {
-
-    //     alterarTitulo(idCadastro)
-
-    //     if (proximaAtualizacao != undefined) {
-    //         clearTimeout(proximaAtualizacao);
-    //     }
-
-    //     fetch(`/medidas/ultimas/${idCadastro}`, { cache: 'no-store' }).then(function (response) {
-    //         if (response.ok) {
-    //             response.json().then(function (resposta) {
-    //                 console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-    //                 resposta.reverse();
-
-    //                 plotarGrafico(resposta, idCadastro);
-    //             });
-    //         } else {
-    //             console.error('Nenhum dado encontrado ou erro na API');
-    //         }
-    //     })
-    //         .catch(function (error) {
-    //             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    //         });
-    // }
-
-    // // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    // function plotarGrafico(resposta, idCadastro) {
-
-    //     console.log('iniciando plotagem do gráfico...');
-
-    //     // Criando estrutura para plotar gráfico - labels
-    //     let labels = [];
-
-    //     // Criando estrutura para plotar gráfico - dados
-    //     let dados = {
-    //         labels: labels,
-    //         datasets: [{
-    //             label: 'Umidade',
-    //             data: [],
-    //             fill: false,
-    //             borderColor: 'rgb(75, 192, 192)',
-    //             tension: 0.1
-    //         },
-    //         {
-    //             label: 'Temperatura',
-    //             data: [],
-    //             fill: false,
-    //             borderColor: 'rgb(199, 52, 52)',
-    //             tension: 0.1
-    //         }]
-    //     };
-
-    //     console.log('----------------------------------------------')
-    //     console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-    //     console.log(resposta)
-
-    //     // Inserindo valores recebidos em estrutura para plotar o gráfico
-    //     for (i = 0; i < resposta.length; i++) {
-    //         var registro = resposta[i];
-    //         labels.push(registro.momento_grafico);
-    //         dados.datasets[0].data.push(registro.umidade);
-    //         dados.datasets[1].data.push(registro.temperatura);
-    //     }
-
-    //     console.log('----------------------------------------------')
-    //     console.log('O gráfico será plotado com os respectivos valores:')
-    //     console.log('Labels:')
-    //     console.log(labels)
-    //     console.log('Dados:')
-    //     console.log(dados.datasets)
-    //     console.log('----------------------------------------------')
-
-    //     // Criando estrutura para plotar gráfico - config
-    //     const config = {
-    //         type: 'line',
-    //         data: dados,
-    //     };
-
-    //     // Adicionando gráfico criado em div na tela
-    //     let myChart = new Chart(
-    //         document.getElementById(`myChartCanvas${idCadastro}`),
-    //         config
-    //     );
-
-    //     setTimeout(() => atualizarGrafico(idCadastro, dados, myChart), 2000);
-    // }
-
-
-    // // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // // buscando a última medida inserida em tabela contendo as capturas, 
-
-    // //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    // //     Para ajustar o "select", ajuste o comando sql em src/models
-    // function atualizarGrafico(idCadastro, dados, myChart) {
-
-
-
-    //     fetch(`/medidas/tempo-real/${idCadastro}`, { cache: 'no-store' }).then(function (response) {
-    //         if (response.ok) {
-    //             response.json().then(function (novoRegistro) {
-
-    //                 console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-    //                 console.log(`Dados atuais do gráfico:`);
-    //                 console.log(dados);
-
-    //                 let avisoCaptura = document.getElementById(`avisoCaptura${idCadastro}`)
-    //                 avisoCaptura.innerHTML = ""
-
-
-    //                 if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
-    //                     console.log("---------------------------------------------------------------")
-    //                     console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-    //                     avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
-    //                     console.log("Horário do novo dado capturado:")
-    //                     console.log(novoRegistro[0].momento_grafico)
-    //                     console.log("Horário do último dado capturado:")
-    //                     console.log(dados.labels[dados.labels.length - 1])
-    //                     console.log("---------------------------------------------------------------")
-    //                 } else {
-    //                     // tirando e colocando valores no gráfico
-    //                     dados.labels.shift(); // apagar o primeiro
-    //                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-
-    //                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-    //                     dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-
-    //                     dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-    //                     dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
-
-    //                     myChart.update();
-    //                 }
-
-    //                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-    //                 proximaAtualizacao = setTimeout(() => atualizarGrafico(idCadastro, dados, myChart), 2000);
-    //             });
-    //         } else {
-    //             console.error('Nenhum dado encontrado ou erro na API');
-    //             // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-    //             proximaAtualizacao = setTimeout(() => atualizarGrafico(idCadastro, dados, myChart), 2000);
-    //         }
-    //     })
-    //         .catch(function (error) {
-    //             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    //         });
-
-    // }
-
-    
-
+    const ctx = document.getElementById("myChart");
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [
+          {
+            data,
+            fill: false,
+            backgroundColor: cores,
+            //   borderColor: 'black',
+            borderWidth: 2,
+            tension: 0.1,
+          },
+        ],
+      },
+      options: {
+        options: {
+          scales: {}, // Define as escalas vazias
+        },
+      },
+    });
+  }
 </script>

@@ -26,7 +26,10 @@ constraint fkCad foreign key (fkCadastro)
 constraint pkComposta primary key (idFeedback, fkCadastro)
 );
 
-select * from Feedback;
+insert into Feedback 
+values ();
+
+select receita,nota from Feedback group by nota;
 
 select * from cadastro;
 
