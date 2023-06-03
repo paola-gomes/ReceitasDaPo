@@ -29,12 +29,16 @@
         <li>
           <a class="a_menu" href="cadastro.html">Cadastre-se</a>
         </li>
-        <li><a class="a_menu" href="#"><img src="img/menu.png"></a>
-          <ul>
-            <li><a class="a_menu" href="receitas.html">Receitas</a></li>
-            <li><a class="a_menu" href="top3.html">Top 3</a></li>
-            <li><a class="a_menu" href="comentario.html">Nos avalie!</a></li>
-          </ul>
+        <li>
+          <div class="dropdown" style="z-index: 100;">
+            <img src="img/menu.png" onclick="myFunction()" class="dropbtn" />
+            <div id="myDropdown" class="dropdown-content">
+              <a class="a_menu" href="receitas.html">Receitas</a>
+              <a class="a_menu" href="top3.html">Top 3</a>
+              <a class="a_menu" href="feedback.html">Nos avalie!</a>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -65,10 +69,12 @@
       <aside class="carousel__navigation">
         <ol class="carousel__navigation-list">
           <li class="carousel__navigation-item">
-            <a href="#carousel__slide1" class="carousel__navigation-button" onclick="changeColor(this)">Go to slide 1</a>
+            <a href="#carousel__slide1" class="carousel__navigation-button" onclick="changeColor(this)">Go to slide
+              1</a>
           </li>
           <li class="carousel__navigation-item">
-            <a href="#carousel__slide2" class="carousel__navigation-button" onclick="changeColor(this)">Go to slide 2</a>
+            <a href="#carousel__slide2" class="carousel__navigation-button" onclick="changeColor(this)">Go to slide
+              2</a>
           </li>
         </ol>
       </aside>
@@ -160,60 +166,8 @@
     </div>
   </div>
 
-  <!-- Gráficos -->
-
-  <!-- <div class="grafico">
-    <div class="container1">
-      <div class="title">
-        <p>
-          Qual das minhas receitas é a sua favorita?
-        </p>
-      </div>
-      <div class="top3">
-        <div class="lugar">
-          <div class="textoBloquinho">
-            1°lugar
-          </div>
-          <div class="bloquinhos">
-            Brownie
-          </div>
-        </div>
-        <div class="lugar">
-          <div class="textoBloquinho">
-            2°lugar
-          </div>
-          <div class="bloquinhos">
-            Cookies
-          </div>
-        </div>
-        <div class="lugar">
-          <div class="textoBloquinho">
-            3°lugar
-          </div>
-          <div class="bloquinhos">
-            Torta Holandesa
-          </div>
-        </div>
-      </div>
-      <div class="graficoImagem">
-        <div class="analytics">
-          <canvas id="myChart"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  </div> -->
-
-  <!-- fim grafico -->
-
   <!-- Fale conosco -->
-  <!-- <div class="login">
-    <div class="alerta_erro">
-        <div class="card_erro" id="cardErro">
-            <span id="mensagem_erro"></span>
-        </div>
-    </div> -->
+
   <div class="faleConosco">
     <div class="container">
       <div class="title">
@@ -231,9 +185,7 @@
       <button class="botao" onclick="enviar()">
         Enviar
       </button>
-      <!-- <div id="divAguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif">
-      </div> -->
+
     </div>
   </div>
 
@@ -267,19 +219,20 @@
     </div>
   </footer>
 </body>
+
 </html>
 
 <script>
 
-var botaoCarrossel = document.querySelectorAll('.carousel__navigation-button');
+  var botaoCarrossel = document.querySelectorAll('.carousel__navigation-button');
 
-function changeColor(clickedButton) {
-  botaoCarrossel.forEach(function(botaoCarrossel) {
-    botaoCarrossel.classList.remove('active');
-  });
+  function changeColor(clickedButton) {
+    botaoCarrossel.forEach(function (botaoCarrossel) {
+      botaoCarrossel.classList.remove('active');
+    });
 
-  clickedButton.classList.add('active');
-}
+    clickedButton.classList.add('active');
+  }
 
 
   function enviar() {
@@ -303,7 +256,7 @@ function changeColor(clickedButton) {
     if (descricaoVar.length > 100) {
       cardErro.style.display = "block"
       alert("A descrição tem que ter até 100 caracteres");
-      
+
 
       finalizarAguardar();
       return false;
@@ -345,22 +298,11 @@ function changeColor(clickedButton) {
       console.log("resposta: ", resposta);
 
       if (resposta.ok) {
-        // cardErro.style.display = "block";
-
-        // mensagem_erro.innerHTML = "Dúvida enviada Redirecionando para tela de Login...";
-
-        // setTimeout(() => {
-        //   window.location = "index.html";
-        // }, "2000")
 
         alert("Sua dúvida foi enviada com sucesso :)")
 
-        // limparFormulario();
-        // finalizarAguardar();
       }
-      // else {
-      //     throw ("Houve um erro ao tentar realizar o cadastro!");
-      // }
+      
     }).catch(function (resposta) {
       console.log(`#ERRO: ${resposta}`);
       // finalizarAguardar();
@@ -369,38 +311,24 @@ function changeColor(clickedButton) {
     return false;
   }
 
-  // function sumirMensagem() {
-  //     cardErro.style.display = "none"
-  // }
+  /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
 
-  // const ctx = document.getElementById('myChart');
-
-  // new Chart(ctx, {
-  //   type: 'pie',
-  //   data: {
-  //     labels: [
-  //       'Cookies',
-  //       'Torta Holandesa',
-  //       'Brownie',
-  //       'Torta de limão',
-  //       'Casadinho',
-  //       'Bolo de chocolate',
-  //       'Pão caseiro'
-  //     ],
-  //     datasets: [{
-  //       label: '# of Votes',
-  //       data: [
-  //         6,
-  //         3,
-  //         14,
-  //         2,
-  //         2,
-  //         1,
-  //         1
-  //       ],
-  //       borderWidth: 1
-  //     }]
-  //   },
-  // });
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
 
 </script>

@@ -28,12 +28,14 @@
         <li>
           <a class="a_menu" href="cadastro.html">Cadastre-se</a>
         </li>
-        <li><a class="a_menu" href="#"><img src="img/menu.png"></a>
-          <ul>
-            <li><a class="a_menu" href="receitas.html">Receitas</a></li>
-            <li><a class="a_menu" href="top3.html">Top 3</a></li>
-            <li><a class="a_menu" href="comentario.html">Nos avalie!</a></li>
-          </ul>
+        <div class="dropdown" style="z-index: 100;">
+          <img src="img/menu.png" onclick="myFunction()" class="dropbtn" />
+          <div id="myDropdown" class="dropdown-content">
+            <a class="a_menu" href="receitas.html">Receitas</a>
+            <a class="a_menu" href="top3.html">Top 3</a>
+            <a class="a_menu" href="comentario.html">Nos avalie!</a>
+          </div>
+        </div>
       </ul>
     </div>
   </div>
@@ -251,6 +253,24 @@
 
   function sumirMensagem() {
     cardErro.style.display = "none"
+  }
+
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
   }
 
 </script>

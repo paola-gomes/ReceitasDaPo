@@ -8,6 +8,7 @@
   <title>Receitas da Pô - Top 3</title>
   <link rel="icon" href="../img/logo/logoP-removebg.png">
   <link rel="stylesheet" href="../css/styleTop3.css">
+  <link rel="stylesheet" href="../css/styleForAll.css">
   <script src="js/funcoes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -23,12 +24,16 @@
         <img class="nomeInicio" src="../img/logo/nomeP-removebg.png" href="index.html">
       </a>
       <ul class="navbar menu">
-        <li><a class="a_menu" href="#"><img src="../img/menu.png"></a>
-          <ul>
-            <li><a class="a_menu" href="../receitas.html">Receitas</a></li>
-            <li><a class="a_menu" href="top3.html">Top 3</a></li>
-            <li><a class="a_menu" href="comentario.html">Nos avalie!</a></li>
-          </ul>
+        <li>
+          <div class="dropdown" style="z-index: 100;">
+            <img src="../img/menu.png" onclick="myFunction()" class="dropbtn" />
+            <div id="myDropdown" class="dropdown-content">
+              <a class="a_menu" href="../receitas.html">Receitas</a>
+              <a class="a_menu" href="top3.html">Top 3</a>
+              <a class="a_menu" href="feedback.html">Nos avalie!</a>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -66,7 +71,7 @@
           Meu top 3
         </p>
         <div id="div_manip"></div>
-        
+
       </div>
 
     </div>
@@ -78,6 +83,23 @@
 </html>
 
 <script>
+
+  document.addEventListener("DOMContentLoaded", function (e) {
+
+    if (sessionStorage.length == 0) {
+
+      var element = document.getElementsByTagName("body")[0];
+      element.classList.add("blurry");
+
+      setTimeout(1000, () => {
+        if (window.confirm('Para ter acesso a está página é necessário fazer seu login, clique em ok para ser redirecionado para o cadastro')) {
+          window.location.href = '../cadastro.html';
+        };
+
+      });
+    }
+
+  });
 
   var listaTop3 = [];
 
@@ -96,6 +118,26 @@
 
         div_manip.innerHTML += `${contador + 1}° ${listaTop3[contador]} <br>`
 
+      }
+    }
+  }
+
+  /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
       }
     }
   }

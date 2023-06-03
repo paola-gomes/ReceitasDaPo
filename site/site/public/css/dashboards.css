@@ -1,8 +1,10 @@
-/* pagina mural */
-
+@font-face {
+  font-family: Alice;
+  src: url('Alice-Regular.ttf');
+}
 *,
 body {
-  font-family: "Exo 2", sans-serif;
+  font-family: Alice;
 }
 
 .label-captura {
@@ -12,7 +14,6 @@ body {
 
 .dash-right .avisos {
   width: 100%;
-  /* border: 3px solid pink; */
   color: rgb(216, 216, 216);
   font-family: "Exo 2", sans-serif;
 }
@@ -63,7 +64,6 @@ body {
 
 .publicacao-btn-editar {
   cursor: pointer;
-  font-family: "Exo 2", sans-serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
