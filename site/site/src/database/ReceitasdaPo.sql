@@ -1,9 +1,6 @@
 create database ReceitasdaPo;
 use ReceitasdaPo;
 
-desc Cadastro;
-select * from Cadastro;
-
 create table Cadastro (
 idCadastro int primary key auto_increment,
 nome varchar (35),
@@ -13,7 +10,9 @@ idade int,
 senha char (8)
 );
 
-desc Feedback;
+desc Cadastro;
+select * from Cadastro;
+truncate table Cadastro;
 
 create table Feedback (
 idFeedback int auto_increment,
@@ -26,15 +25,15 @@ constraint fkCad foreign key (fkCadastro)
 constraint pkComposta primary key (idFeedback, fkCadastro)
 );
 
+desc Feedback;
 insert into Feedback 
-values (null, 'brownie', 'teste2', 10, 2),
+values (null, 'cookie', 'teste2', 10, 2),
        (null, 'tortaHoland', 'teste2', 9, 2),
        (null, 'casadinho', 'teste2', 8, 2),
        (null, 'brownie', 'teste2', 9, 2);
 
-select receita,nota from Feedback 
-
-select * from cadastro;
+select receita,nota from Feedback;
+truncate table Feedback;
 
 create table FaleConosco (
 idFale int primary key auto_increment,

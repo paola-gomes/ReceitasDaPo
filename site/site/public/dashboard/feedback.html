@@ -8,7 +8,9 @@
   <title>Receitas da Pô - Nos avalie</title>
   <link rel="icon" href="../img/logo/logoP-removebg.png">
   <link rel="stylesheet" href="../css/styleFeedback.css">
-  <script src="js/funcoes.js"></script>
+  <link rel="stylesheet" href="../css/styleForAll.css">
+  <link rel="stylesheet" href="../css/styleDash.css">
+  <script src="../js/funcoes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -23,12 +25,19 @@
       </a>
       <ul class="navbar menu">
         <li>
+          <div class="hello">
+            <h3>Oi, <span id="b_usuario">usuário</span>!</h3>
+          </div>
+        </li>
+        <li>
           <div class="dropdown" style="z-index: 100;">
             <img src="../img/menu.png" onclick="myFunction()" class="dropbtn" />
             <div id="myDropdown" class="dropdown-content">
+              <a class="a_menu" href="dashboard.html">Avaliações</a> 
               <a class="a_menu" href="../receitas.html">Receitas</a>
               <a class="a_menu" href="top3.html">Top 3</a>
               <a class="a_menu" href="feedback.html">Nos avalie!</a>
+              <a class="btn-logout" onclick="limparSessao()">Sair</a>
             </div>
           </div>
         </li>
@@ -46,10 +55,10 @@
     <div class="select">
       <select name="escolha" id="select_escolha" >
         <option value="" disabled selected hidden> Escolha a receita feita</option>
-        <option value="brownie">Brownie</option>
-        <option value="cookie">Cookie</option>
-        <option value="tortaHoland">Torta Holandesa</option>
-        <option value="casadinho">Casadinho</option>
+        <option value="Brownie">Brownie</option>
+        <option value="Cookie">Cookie</option>
+        <option value="Torta Holandesa">Torta Holandesa</option>
+        <option value="Casadinho">Casadinho</option>
     </select>   
     </div>
 
@@ -78,6 +87,36 @@
         Enviar
       </button>
     </div>
+
+    <!-- Contato -->
+  <footer>
+    <div class="footer">
+      <div class="logoContato">
+        <img src="../img/logo/logoP-removebg.png" alt="LogoContato">
+      </div>
+      <div class="titulo1">Serviços</div>
+      <div class="textinho">
+        <ul>
+          <li>Receitas</li>
+          <li>Faça seu top 5</li>
+          <li>Comentário</li>
+        </ul>
+      </div>
+      <div class="logoInsta">
+        <img src="../img/insta.png" alt="">
+      </div>
+      <div class="titulo2">Contatos</div>
+      <div class="textinho2">
+        <ul>
+          <li>Rua Haddock Lobo, 595</li>
+          <li>Email: paola.gomes@sptech.school</li>
+        </ul>
+      </div>
+      <div class="consideracoes">
+        2023 - made by Paola Gomes
+      </div>
+    </div>
+  </footer>
     
 </div>
 
@@ -85,6 +124,25 @@
 </html>
 
 <script>
+
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+document.addEventListener("DOMContentLoaded", function (e) {
+
+if (sessionStorage.length == 0) {
+
+  var element = document.getElementsByTagName("body")[0];
+  element.classList.add("blurry");
+
+  setTimeout(1000, () => {
+    if (window.confirm('Para ter acesso a está página é necessário fazer seu login, clique em ok para ser redirecionado para o cadastro')) {
+      window.location.href = '../cadastro.html';
+    };
+
+  });
+}
+
+});
 
   var idUsuario = sessionStorage.ID_USUARIO;
 

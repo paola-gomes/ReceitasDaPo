@@ -3,106 +3,6 @@
   src: url('Alice-Regular.ttf');
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Alice;
-  background-color: rgb(255, 255, 255);
-}
-
-.container {
-  display: flex;
-  width: 80%;
-  margin: auto;
-}
-
-.header {
-  background-color: #fff;
-  height: 5rem;
-  font-size: larger;
-  border-bottom: 2px solid #d83198e1;
-}
-
-.header .container {
-  /* justify-content: space-evenly; */
-  margin-left: 5%;
-  align-items: center;
-  height: 100%;
-}
-
-.header .a_menu {
-  /* margin-left: 80%; */
-  text-decoration: none;
-  color: #000000;
-}
-
-.header a .logoInicio {
-  width: 60%;
-}
-
-.header .nomeInicio {
-  width: 160%;
-}
-
-.agora {
-  font-weight: 800;
-}
-
-.navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 40%;
-  list-style: none;
-  color: #ffffff;
-}
-
-/* Dropdown Button */
-.dropbtn {
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 25vh;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu */
-.show {display:block;}
-
-/* fim menu */
-
-.header h1 {
-  margin: 0;
-}
-
-
 .receitas {
   width: 100%;
   font-family: Alice;
@@ -123,7 +23,7 @@ body {
   display: flex;
   position: relative;
   justify-content: space-around;
-  height: 100vh;
+  height: 58vh;
   margin: 3%;
   /* left: 5%; */
 }

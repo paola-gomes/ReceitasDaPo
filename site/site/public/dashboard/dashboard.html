@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Receitas da Pô - Área do usuário</title>
     <link rel="icon" href="../public/img/logo/logoP-removebg.png" />
-    <link rel="stylesheet" href="../css/styleDash.css" />
-    <link rel="stylesheet" href="../css/dashboards.css" />
+    <link rel="stylesheet" href="../css/styleDash.css"/>
+    <link rel="stylesheet" href="../css/styleForAll.css">
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -42,12 +42,18 @@
         </a>
         <ul class="navbar menu">
           <li>
+            <div class="hello">
+              <h3>Olá, <span id="b_usuario">usuário</span> :) </h3>
+            </div>
+          </li>
+          <li>
             <div class="dropdown" style="z-index: 100;">
               <img src="../img/menu.png" onclick="myFunction()" class="dropbtn" />
               <div id="myDropdown" class="dropdown-content">
                 <a class="a_menu" href="../receitas.html">Receitas</a>
                 <a class="a_menu" href="top3.html">Top 3</a>
                 <a class="a_menu" href="feedback.html">Nos avalie!</a>
+                <a class="btn-logout" onclick="limparSessao()">Sair</a>
               </div>
             </div>
           </li>
@@ -55,57 +61,48 @@
       </div>
     </div>
 
+    <div class="titulo">
+      Avaliações
+    </div>   
+
     <div class="janela">
-      <div class="header-left">
-        <div class="hello">
-          <h3>Oi, <span id="b_usuario">usuário</span>!</h3>
-        </div>
-
-        <div class="btn-nav">
-          <h3>Avaliações</h3>
-        </div>
-
-        <div class="btn-nav-white">
-          <a href="feedback.html">
-            <h3>Feedback</h3>
-          </a>
-        </div>
-
-        <div class="btn-nav-white">
-          <a href="top5.html">
-            <h3>Top 5</h3>
-          </a>
-        </div>
-
-        <div class="btn-logout" onclick="limparSessao()">
-          <h3>Sair</h3>
-        </div>
-      </div>
-
       <div class="dash-right">
-        <div class="btns-dash">
-          <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-          <button
-            class="btn-chart btn-pink"
-            onclick="exibirAquario(1)"
-            id="btnAquario1"
-          >
-            Avaliações
-          </button>
-        </div>
-        <div id="graficos">
-          <div id="grafico1" class="display-block">
             <div class="graph">
               <canvas id="myChart"></canvas>
             </div>
-            <div class="label-captura">
-              <p id="avisoCaptura1" style="color: white"></p>
-            </div>
-          </div>
-
-        </div>
       </div>
     </div>
+
+    <!-- Contato -->
+  <footer>
+    <div class="footer">
+      <div class="logoContato">
+        <img src="../img/logo/logoP-removebg.png" alt="LogoContato">
+      </div>
+      <div class="titulo1">Serviços</div>
+      <div class="textinho">
+        <ul>
+          <li>Receitas</li>
+          <li>Faça seu top 5</li>
+          <li>Comentário</li>
+        </ul>
+      </div>
+      <div class="logoInsta">
+        <img src="../img/insta.png" alt="">
+      </div>
+      <div class="titulo2">Contatos</div>
+      <div class="textinho2">
+        <ul>
+          <li>Rua Haddock Lobo, 595</li>
+          <li>Email: paola.gomes@sptech.school</li>
+        </ul>
+      </div>
+      <div class="consideracoes">
+        2023 - made by Paola Gomes
+      </div>
+    </div>
+  </footer>
+
   </body>
 </html>
 
@@ -134,7 +131,7 @@
   function plotarDadosGrafico(dados) {
     var data = [];
     var labels = [];
-    var cores = ["#ff0000", "#fcce05", "#9905fc", "#0838d8", "#24a518"];
+    var cores = ["#d83198", "#3b9d17c2", "#d83198c0", "#3b9d17"];
 
     for (var i = 0; i < dados.length; i++) {
       data.push(dados[i].nota);
@@ -154,17 +151,11 @@
             data,
             fill: false,
             backgroundColor: cores,
-            //   borderColor: 'black',
             borderWidth: 2,
             tension: 0.1,
           },
         ],
-      },
-      options: {
-        options: {
-          scales: {}, // Define as escalas vazias
-        },
-      },
+      }
     });
   }
 

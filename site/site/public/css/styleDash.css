@@ -3,156 +3,36 @@
   src: url('Alice-Regular.ttf');
 }
 
+*,
 body {
-  margin: 0;
-  padding: 0;
   font-family: Alice;
-  background-color: black;
 }
 
-.container {
-  width: 80%;
-  margin: auto;
+.titulo {
   display: flex;
-}
-
-.header {
-  background-color: #fff;
-  height: 5rem;
-  font-size: larger;
-  border-bottom: 2px solid #d83198e1;
-}
-
-/* .header .container {
-  justify-content: space-between;
-} */
-
-.header .container {
-  /* justify-content: space-evenly; */
-  margin-left: 5%;
-  align-items: center;
-  height: 100%;
-}
-
-.header .a_menu {
-  /* margin-left: 80%; */
-  text-decoration: none;
-  color: #000000;
-}
-
-.header a .logoInicio {
-  width: 60%;
-}
-
-.header .nomeInicio {
-  width: 160%;
-}
-
-.header a {
-  text-decoration: none;
-  /* color: #d83198e1; */
-}
-
-.navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 40%;
-  list-style: none;
-  color: #ffffff;
-}
-
-/* Dropdown Button */
-.dropbtn {
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
   position: relative;
-  display: inline-block;
+  width: 50%;
+  height: 5rem;
+  font-size: 5vh;
+  align-items: center;
+  left: 5%;
+  margin: 2%;
 }
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 25vh;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu */
-.show {display:block;}
-
-/* fim menu */
-
-.header h1 {
-  margin: 0;
-}
-
-
-.header h1 {
-  margin: 0;
-}
-
 
 /* dash */
 
 .janela {
   display: flex;
-  width: 90vw;
+  width: 100%;
 }
-
-.header-left a {
-  text-decoration: none;
-  color: white;
-}
-
-.header-left {
-  position: relative;
-  /* top: 0; */
-  left: 0;
-  z-index: 999;
-  height: 90vh;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border-right: 3px solid #d83198e1;
-  background-color: #212124;
-}
-
 
 .dash-right {
-  /* display: flex; */
+  height: 65vh;
+  display: flex;
   width: 100%;
   justify-content: center;
-  background-color: #161618;
   position: relative;
-  left: 0%;
 } 
-
-.header-left h1 {
-  color: #32b9cd;
-}
 
 .hello {
   width: 100%;
@@ -161,53 +41,79 @@ body {
 }
 
 .hello h3 {
-  color: #d83198e1;
+  color: #d00080;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .hello h3 span {
   font-weight: 800;
+  text-transform: uppercase;
 }
 
-.btn-nav {  
+/* Avaliações */
+
+.btns-dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.graph {
+  display: flex;
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  justify-content: center;
+}
+
+.tituloGraficos {
+  color: rgb(216, 216, 216);
+  display: flex;
+  justify-content: center;
+}
+
+.btn-chart {
+  border: 0;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: #e6005a;
+  background-color: white;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.btn-pink {
   color: white;
   background-color: #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
 }
 
-.btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
-
-.btn-nav-white h3 {
+.btn-white {
   color: #e6005a;
-  padding: 0;
-  margin: 0;
+  background-color: white;
+
 }
 
-.btn-nav h3,
-.btn-logout h3 {
-  margin: 0;
-  padding: 0;
+/* .display-none {
+  display: none;
 }
 
-.btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: #3b9d17cb;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
-  cursor: pointer;
+.display-flex {
+  display: flex;
+} */
+
+.display-block {
+  display: block;
 }
+
+canvas {
+  width: 50vh;
+  height: 100%;
+}
+
+/* canvas {
+  width: 100% !important;
+  height: 100% !important;
+} */
