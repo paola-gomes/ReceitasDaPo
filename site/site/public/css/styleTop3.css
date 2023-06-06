@@ -3,10 +3,6 @@
     src: url('Alice-Regular.ttf');
   }
 
-  .header h1 {
-    margin: 0;
-  }
-
   /* top 3 */
 
   .top3 {
@@ -24,3 +20,96 @@
     left: 5%;
     margin: 2%;
   }
+
+  .tudo {
+    display: flex;
+  }
+
+  .divImg {
+    height: 70vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .divImg img {
+    height: 100%;
+    border-radius: 1rem;
+  }
+
+  .texto {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .montagemTop3 {
+    flex-direction: column;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-family: Alice;
+    font-size: 3vh;
+  }
+
+  p {
+    width: 100%;
+  }
+  
+.select {
+  position: relative;
+  left: 7%;
+  height: 7vh;
+  width: 90%;
+}
+
+.select select {
+  height: 4vh;
+  width: 16vw;
+  font-family: Alice;
+  font-size: 3vh;
+  border-radius: 1rem;
+  border: 0.15rem solid #3b9d1793;
+}
+
+button {
+  cursor: pointer;
+  font-family: Alice;
+  font-weight: lighter;
+  color: #ffffff;
+  height: 4vh;
+  width: 7vw;
+  font-size: 3vh;
+  border-radius: 1rem;
+  background-color: #d83198ea ;
+  border: none;
+  align-self: flex-end;
+}
+
+.resul {  
+  display: flex;
+  flex-direction: column;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-family: Alice;
+  font-size: 3vh;
+  align-items: center;
+}
+
+#div_manip {
+  height: 15vh;
+  width: 15vw;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-family: Alice;
+  font-size: 3vh;
+  background-color: #d831986b ;
+  border-radius: 1rem;
+}
+
+
+

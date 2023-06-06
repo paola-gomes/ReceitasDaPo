@@ -55,33 +55,37 @@
     <div class="tudo">
 
       <div class="divImg">
-        <img src="" alt="">
+        <img src="../img/food/torta_limao.jpeg" alt="Torta de Limão">
       </div>
 
-      <div class="montagemTop3">
-        <p>
-          Escolha seu top 3, primeiro o 1º lugar, depois o 2º e depois o 3°
-        </p>
-        <select name="escolha" id="select_escolha">
-          <option value="" disabled selected hidden>Top 3</option>
-          <option value="Brownie">Brownie</option>
-          <option value="Cookie">Cookie</option>
-          <option value="Torta Holandesa">Torta Holandesa</option>
-          <option value="Casadinho">Casadinho</option>
-        </select>
-        <button onclick="escolher()">
-          Cadastrar
-        </button>
-      </div>
+      <div class="texto">
+        <div class="montagemTop3">
+          <p>
+            Escolha seu top 3, primeiro o 1º lugar, depois o 2º e depois o 3°
+          </p>
+          <div class="select">
+            <select name="escolha" id="select_escolha">
+              <option value="" disabled selected hidden>Top 3</option>
+              <option value="Brownie">Brownie</option>
+              <option value="Cookie">Cookie</option>
+              <option value="Torta Holandesa">Torta Holandesa</option>
+              <option value="Casadinho">Casadinho</option>
+            </select>
+          </div>
+          <button onclick="escolher()">
+            Cadastrar
+          </button>
+        </div>
 
-      <div class="resultado">
-        <p>
-          Meu top 3
-        </p>
-        <div id="div_manip"></div>
+        <div class="resul">
+          <p>
+              Meu top 3
+            </p>
+            <div id="div_manip"></div>
+        </div>
+        
+            </div>
       </div>
-
-    </div>
   </div>
 
   <!-- Contato -->
@@ -123,22 +127,22 @@
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 
-  document.addEventListener("DOMContentLoaded", function (e) {
+  // document.addEventListener("DOMContentLoaded", function (e) {
 
-    if (sessionStorage.length == 0) {
+  //   if (sessionStorage.length == 0) {
 
-      var element = document.getElementsByTagName("body")[0];
-      element.classList.add("blurry");
+  //     var element = document.getElementsByTagName("body")[0];
+  //     element.classList.add("blurry");
 
-      setTimeout(1000, () => {
-        if (window.confirm('Para ter acesso a está página é necessário fazer seu login, clique em ok para ser redirecionado para o cadastro')) {
-          window.location.href = '../cadastro.html';
-        };
+  //     setTimeout(1000, () => {
+  //       if (window.confirm('Para ter acesso a está página é necessário fazer seu login, clique em ok para ser redirecionado para o cadastro')) {
+  //         window.location.href = '../cadastro.html';
+  //       };
 
-      });
-    }
+  //     });
+  //   }
 
-  });
+  // });
 
   var listaTop3 = [];
 
