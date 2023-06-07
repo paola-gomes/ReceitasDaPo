@@ -30,8 +30,7 @@ body {
   height: 100%;
 }
 
-.header .a_menu {
-  /* margin-left: 80%; */
+.header .a_menu { 
   text-decoration: none;
   color: #000000;
 }
@@ -127,9 +126,6 @@ body {
   display: flex;
   height: 60%;
   width: 18%;
-  /* background-image: url('../img/logo/logoP-removebg.png');
-  background-size: cover;
-  background-position: 50% 50%; */
   position: relative;
   bottom: 0%;
   top: 40%;

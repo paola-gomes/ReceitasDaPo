@@ -1,0 +1,61 @@
+@font-face {
+    font-family: Alice;
+    src: url('Alice-Regular.ttf');
+  }
+
+  /* receita */
+
+  .receita {
+    width: 100%;
+    font-family: Alice;
+  }
+  
+  .titulo {
+    display: flex;
+    position: relative;
+    width: 50%;
+    height: 5rem;
+    font-size: 5vh;
+    align-items: center;
+    left: 5%;
+    margin: 2%;
+  }
+
+  .subtitulo {
+    display: flex;
+    position: relative;
+    width: 50%;
+    font-size: 5vh;
+    font-weight: bold;
+    align-items: center;
+    left: 5%;
+  }
+
+  .tudo {
+    display: flex;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .divImg {
+    height: 110vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .divImg img {
+    height: 100%;
+    border-radius: 1rem;
+  }
+
+  .modo{
+    width: 40vw;
+  }
+
+  .modo p {
+    /* width: 40vw; */
+    font-size: 3vh;
+  }

@@ -37,8 +37,9 @@
 .bloco img {
   height: 25vh;
   width: 13vw;
-  border-radius: 10%;
+  border-radius: 2rem;
   transition: transform 1s ease;
+  padding: 1rem;
 }
 
 .bloco:hover img {
@@ -46,20 +47,23 @@
 }
 
 .bloco:active img {
-  border: 5px solid #3b9d179b;
+  border: 0.5rem solid #3b9d179b;
 }
 
 .bloquinhos button {
   font-size: 3vh;
-  width: 8vw;
+  /* width: 9vw; */
   border: none;
-  border-radius: 10px;
+  border-radius: 1rem;
   background-color: #d83198a6;
+  padding: 1.5rem;
 }
 
 .bloco {
   flex-direction: column;
   width: 20vw;
+  height: 30vh;
+  padding: 1rem;
   display: flex;
   align-items: center;
 }

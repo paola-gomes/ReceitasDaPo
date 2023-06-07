@@ -79,44 +79,50 @@
 
         <div class="resul">
           <p>
-              Meu top 3
-            </p>
-            <div id="div_manip"></div>
+            Meu top 3
+          </p>
+          <div id="div_manip"></div>
         </div>
-        
-            </div>
-      </div>
-  </div>
 
-  <!-- Contato -->
-  <footer>
-    <div class="footer">
-      <div class="logoContato">
-        <img src="../img/logo/logoP-removebg.png" alt="LogoContato">
-      </div>
-      <div class="titulo1">Serviços</div>
-      <div class="textinho">
-        <ul>
-          <li>Receitas</li>
-          <li>Faça seu top 5</li>
-          <li>Comentário</li>
-        </ul>
-      </div>
-      <div class="logoInsta">
-        <img src="../img/insta.png" alt="">
-      </div>
-      <div class="titulo2">Contatos</div>
-      <div class="textinho2">
-        <ul>
-          <li>Rua Haddock Lobo, 595</li>
-          <li>Email: paola.gomes@sptech.school</li>
-        </ul>
-      </div>
-      <div class="consideracoes">
-        2023 - made by Paola Gomes
       </div>
     </div>
-  </footer>
+  </div>
+
+ <!-- Contato -->
+<footer>
+  <div class="footer">
+    <div class="logoContato">
+      <img src="../img/logo/logoP-removebg.png" alt="LogoContato">
+    </div>
+    <div class="titulo1">Serviços</div>
+    <div class="textinho">
+      <ul>
+        <a href="../receitas.html">
+          <li>Receitas</li>
+        </a>
+        <a href="top3.html">
+          <li>Faça seu top 3</li>
+        </a>
+        <a href="feedback.html">
+          <li>Nos Avalie</li>
+        </a>
+      </ul>
+    </div>
+    <div class="logoInsta">
+      <a href="https://www.instagram.com/paola_rgomes/"><img src="../img/insta.png" alt="Logo Instagram"></a>
+    </div>
+    <div class="titulo2">Contatos</div>
+    <div class="textinho2">
+      <ul>
+        <li>Rua Haddock Lobo, 595</li>
+        <li>Email: paola.gomes@sptech.school</li>
+      </ul>
+    </div>
+    <div class="consideracoes">
+      2023 - made by Paola Gomes
+    </div>
+  </div>
+</footer>
 
 </body>
 
@@ -124,25 +130,26 @@
 
 <script>
 
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 
-  // document.addEventListener("DOMContentLoaded", function (e) {
+  document.addEventListener("DOMContentLoaded", function (e) {
 
-  //   if (sessionStorage.length == 0) {
+    if (sessionStorage.length == 0) {
 
-  //     var element = document.getElementsByTagName("body")[0];
-  //     element.classList.add("blurry");
+      var element = document.getElementsByTagName("body")[0];
+      element.classList.add("blurry");
 
-  //     setTimeout(1000, () => {
-  //       if (window.confirm('Para ter acesso a está página é necessário fazer seu login, clique em ok para ser redirecionado para o cadastro')) {
-  //         window.location.href = '../cadastro.html';
-  //       };
+      setTimeout(1000, () => {
+        if (window.confirm('Para ter acesso a está página é necessário fazer seu login, clique em ok para ser redirecionado para o cadastro')) {
+          window.location.href = '../cadastro.html';
+        };
 
-  //     });
-  //   }
+      }
+      );
+    }
 
-  // });
+  });
 
   var listaTop3 = [];
 
