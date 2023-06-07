@@ -27,10 +27,10 @@ constraint pkComposta primary key (idFeedback, fkCadastro)
 
 desc Feedback;
 insert into Feedback 
-values (null, 'cookie', 'teste2', 10, 2),
-       (null, 'tortaHoland', 'teste2', 9, 2),
-       (null, 'casadinho', 'teste2', 8, 2),
-       (null, 'brownie', 'teste2', 9, 2);
+values (null, 'Cookie', 'teste2', 9, 2),
+       (null, 'Torta Holandesa', 'teste2', 9, 2),
+       (null, 'Casadinho', 'teste2', 8, 2),
+       (null, 'Brownie', 'teste2', 10, 2);
 
 select receita,nota from Feedback;
 truncate table Feedback;
@@ -42,3 +42,11 @@ email varchar(45)
 );
 
 select * from FaleConosco;
+
+create table RespostaFaleConosco (
+idResposta int primary key auto_increment,
+resposta varchar(100),
+fkFaleConosco int,
+constraint fkFaleConosco foreign key (fkFaleConosco)
+references FaleConosco (idFale)
+);
